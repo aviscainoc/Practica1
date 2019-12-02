@@ -10,17 +10,24 @@
 <h1>Libros guardados</h1>
 
 
-<h:form>
+
+
+
+
+
 
 <h:dataTable value="#{gestionLibrosBean.libros}" var="libro">
 
 	<h:column>
-		#{libro.li_codigo}
+		
 		<f:facet name="header">Código</f:facet>
+		#{libro.li_codigo}
+		
 	</h:column>
 	<h:column>
-		#{libro.li_titulo}
+		
 		<f:facet name="header">Título</f:facet>
+		#{libro.li_titulo}
 	</h:column>
 
 </h:dataTable>
@@ -29,7 +36,7 @@
 <h:commandButton value="Regresar">
 </h:commandButton>
 
-</h:form>
+
 
 </body> 
 </html>
