@@ -42,15 +42,11 @@ public class Libro implements Serializable {
 	public void setFecha_publicacion(Date fecha_publicacion) {
 		this.fecha_publicacion = fecha_publicacion;
 	}
+	
 	@Override
 	public String toString() {
 		return "Libro [li_codigo=" + li_codigo + ", li_titulo=" + li_titulo + ", autor=" + autor
 				+ ", fecha_publicacion=" + fecha_publicacion + "]";
 	}
 	
-	
-	
-	
-	
-
 }

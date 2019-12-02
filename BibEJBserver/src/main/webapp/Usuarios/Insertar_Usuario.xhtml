@@ -1,0 +1,53 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd"> 
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:ui="http://java.sun.com/jsf/facelets"
+      xmlns:f="http://java.sun.com/jsf/core"
+      xmlns:h="http://java.sun.com/jsf/html"> 
+
+<h:head></h:head> 
+<body>
+
+<h:form>
+
+<h:panelGrid columns="3">
+	<h:outputLabel for="txtCedula" value="Cédula" />
+	<h:inputText id="txtCedula" value="#{gestionPersonasBean.persona.cedula}" />
+	<h:message for="txtCedula"/>
+
+
+	<h:outputLabel for="txtNombre" value="Nombre" />
+	<h:inputText id="txtNombre" value="#{gestionPersonasBean.persona.nombre}" />
+	<h:message for="txtNombre"/>
+	
+	<h:outputLabel for="txtDireccion" value="Direccion" />
+	<h:inputText id="txtDireccion" value="#{gestionPersonasBean.persona.direccion}" />
+	<h:message for="txtDireccion"/>
+	
+	<h:outputLabel value="Telefonos:" />
+	<h:dataTable value="#{gestionPersonasBean.persona.telefonos}" var="telefono">
+		<h:column>
+			<f:facet name="header">Código</f:facet>
+			<h:inputText value="#{telefono.codigo}" />
+		</h:column>
+		
+		<h:column>
+			<f:facet name="header">Numero</f:facet>
+			<h:inputText value="#{telefono.number}" />
+		</h:column>
+		
+	</h:dataTable>
+	<h:commandButton action="#{gestionPersonasBean.addTelefono()}" value="+ Telefono" />
+	
+	<h:outputText value="" />
+	<h:commandButton action="#{gestionPersonasBean.guardar()}" value="Guardar" />
+
+</h:panelGrid>
+
+
+
+
+</h:form>
+
+
+</body>
+</html>
