@@ -94,4 +94,14 @@ public class GestionUsuariosBean {
 		return usuarios;
 	}
 	
+
+	public void update() {
+		gl.update(us_codigo, us_nombre, us_fechaNacimiento, us_nickname, us_password);
+	}
+	public Usuario login(String usuario, String contrasena) {
+		Usuario us = gl.login(usuario, contrasena);
+		return us;
+
+	}
+	
 }

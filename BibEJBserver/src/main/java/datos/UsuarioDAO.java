@@ -42,4 +42,15 @@ public class UsuarioDAO {
 		return usuarios;
 	}
 	
+	public Usuario login(String usuario, String contrasena) {
+		String jpql = "SELECT u FROM Usuario u WHERE us_usuario = ?1 AND us_password = ?2";
+		Query q = em.createQuery(jpql, Usuario.class);
+		q.setParameter(1, "%" + usuario + "%");
+		q.setParameter(2, "%" + contrasena + "%");
+		
+		List<Usuario> user = q.getResultList();
+		Usuario us = user.get(0);
+		return us;
+	}
+	
 }

@@ -11,7 +11,6 @@
 
 
 <h:form>
-
 	<h:outputLabel > Usuario
 	</h:outputLabel>
 	
@@ -24,29 +23,13 @@
 	<h:inputText value="" placeholder="Ingrese su contrasena">
 	</h:inputText>
 	
-	<h:commandButton action="" value="Ingresar" />
+	<h:commandButton id="usuario" action="#{gestionUsuariosBean.login()}" value="usuario" />
 
-<!-- Filtro de búsqueda : <h:inputText value="#{busquedaLibrosBean.filtro}"/>
-<h:commandButton action="#{busquedaLibrosBean.buscar()}" value="Buscar" />
-
-<h:dataTable value="#{busquedaLibrosBean.libros}" var="libro">
-
-	<h:column>
-		#{libro.codigo}
-		<f:facet name="header">Código</f:facet>
-	</h:column>
-	<h:column>
-		#{libro.titulo}
-		<f:facet name="header">Título</f:facet>
-	</h:column>
-
-</h:dataTable>
-
-
-<h:commandButton value="Regresar" action="guardar-libro">
-</h:commandButton> -->
-
+	<h:inputText type="hidden" value=""></h:inputText>
 </h:form>
 
 </body> 
+<script type="text/javascript">
+
+</script>
 </html>

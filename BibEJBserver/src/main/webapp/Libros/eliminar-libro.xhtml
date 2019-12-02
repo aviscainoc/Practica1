@@ -7,26 +7,15 @@
 <h:head></h:head> 
 <body> 
 
-<h1>Usuarios Registrados</h1>
+<h1>Eliminar libro</h1>
 
 
 <h:form>
 
-<h:dataTable value="#{gestionUsuariosBean.recuperarUsuarios()}" var="usuario">
-
-	<h:column>
-		#{usuario.us_codigo}
-		<f:facet name="header">Código</f:facet>
-	</h:column>
-	<h:column>
-		#{usuario.us_nombre}
-		<f:facet name="header">Nombre</f:facet>
-	</h:column>
-
-</h:dataTable>
+<h:outputLabel value="#{gestionLibrosBean.codigo}"> Codigo del libro</h:outputLabel>
 
 
-<h:commandButton value="Regresar">
+<h:commandButton action="#{gestionLibrosBean.eliminar()}" value="Eliminar">
 </h:commandButton>
 
 </h:form>

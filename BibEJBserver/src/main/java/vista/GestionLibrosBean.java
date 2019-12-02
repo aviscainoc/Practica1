@@ -88,4 +88,12 @@ public class GestionLibrosBean {
 		return libros;
 	}
 	
+	public void update()
+	{
+		gl.update(li_codigo, li_titulo, autor, fecha);
+	}
+	
+	public void eliminar() {
+		gl.eliminar(li_codigo);
+	}
 }
