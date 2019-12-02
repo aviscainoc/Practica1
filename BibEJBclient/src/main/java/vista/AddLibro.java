@@ -108,21 +108,26 @@ public class AddLibro extends JFrame {
 		try {  
             final Hashtable<String, Comparable> jndiProperties =  
                     new Hashtable<String, Comparable>();  
+            System.out.println("Llega 1");
             jndiProperties.put(Context.INITIAL_CONTEXT_FACTORY,  
-                    "org.wildfly.naming.client.WildFlyInitialContextFactory");  
+                    "org.wildfly.naming.client.WildFlyInitialContextFactory");
+            System.out.println("Llega2");
             jndiProperties.put("jboss.naming.client.ejb.context", true);  
+            System.out.println("llega 3");
               
-            jndiProperties.put(Context.PROVIDER_URL, "http-remoting://localhost:8080");  
+            jndiProperties.put(Context.PROVIDER_URL, "http-remoting://localhost:8080");
+            System.out.println("lleha 4");
             jndiProperties.put(Context.SECURITY_PRINCIPAL, "ejb");  
             jndiProperties.put(Context.SECURITY_CREDENTIALS, "ejb");  
               
             final Context context = new InitialContext(jndiProperties);             
             final String lookupName = "ejb:/BibEJBserver/GestionLibros!negocio.GestionLibrosRemote";
             this.gl = (GestionLibrosRemote) context.lookup(lookupName);
-            
+            System.out.println("gl instaciado");
               
         } catch (Exception ex) {  
-            ex.printStackTrace();  
+           System.out.println("catch instancia");
+        	ex.printStackTrace();  
             throw ex;  
         }  
 	}

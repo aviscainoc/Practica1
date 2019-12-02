@@ -73,7 +73,7 @@ public class GestionLibrosBean {
 	
 public String guardarLibro() {
 		
-		System.out.println(li_codigo + "  " + li_titulo);
+		System.out.println(li_codigo + "  " + li_titulo + " " + autor + " " +fecha);
 		gl.guardarLibro(li_codigo, li_titulo, autor, fecha); 
 		
 		libros = gl.getLibros();
