@@ -1,8 +1,11 @@
 package modelo;
 
+import java.io.Serializable;
 import java.util.Date;
 
-public class Libro {
+public class Libro implements Serializable {
+	
+	private static final long serialVersionUID = -20336965027624681L;
 	
 	private int li_codigo;
 	private String li_titulo;
