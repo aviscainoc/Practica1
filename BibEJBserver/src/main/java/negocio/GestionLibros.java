@@ -1,6 +1,6 @@
 package negocio;
 
-import java.sql.Date;
+import java.util.Date;
 import java.util.List;
 
 import javax.inject.Inject;
@@ -22,16 +22,10 @@ public class GestionLibros implements GestionLibrosRemote {
 		l.setAutor(autor);
 		l.setFecha_publicacion(fecha_publicacion);
 		dao.insert(l);
-		
 	}
 
-	
-
 	@Override
-	
-	
 	public List<Libro> getLibros(){
-		
 		return dao.getLibros();
 	}
 	/*
@@ -39,11 +33,4 @@ public class GestionLibros implements GestionLibrosRemote {
 		
 		return dao.getLibrosXNombre(filtro);
 	}*/
-
-
-
-	
-	
-	
-
 }
