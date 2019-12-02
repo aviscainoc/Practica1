@@ -18,6 +18,7 @@ public class GestionLibros implements GestionLibrosRemote, GestionLibrosLocal {
 	
 	
 	public void guardarLibro(int li_codigo, String li_titulo, String autor, String fecha_publicacion){
+		System.out.println("gestion libros server");
 		Libro l = new Libro();  
 		l.setLi_codigo(li_codigo);
 		l.setLi_titulo(li_titulo);
