@@ -27,7 +27,7 @@ public class Libro implements Serializable {
 	@OneToOne(cascade = CascadeType.ALL, fetch = FetchType.EAGER)
 	@JoinColumn(name="li_codigo")
 	//@Column(name="li_autor")
-	private Autor autor.;
+	private Autor autor;
 	
 	@Column(name="li_fecha")
 	private String fecha_publicacion;
