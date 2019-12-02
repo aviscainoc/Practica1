@@ -10,4 +10,5 @@ import modelo.Usuario;
 public interface GestionUsuariosLocal {
 	public void guardarUsuario(int us_codigo, String us_nombre, String us_fechaNacimiento, String us_nickname, String us_password);
 	public List<Usuario> getUsuarios();
+	public void update(int us_codigo, String us_nombre, String us_fechaNacimiento, String us_nickname, String us_password);
 }

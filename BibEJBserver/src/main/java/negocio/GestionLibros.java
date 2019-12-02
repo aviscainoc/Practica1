@@ -29,6 +29,16 @@ public class GestionLibros implements GestionLibrosRemote, GestionLibrosLocal {
 	public List<Libro> getLibros(){
 		return dao.getLibros();
 	}
+	
+	public void update(int li_codigo, String li_titulo, String autor, String fecha_publicacion) {
+		Libro l = new Libro();
+		l.setLi_codigo(li_codigo);
+		l.setLi_titulo(li_titulo);
+		l.setAutor(autor);
+		l.setFecha_publicacion(fecha_publicacion);
+		
+		dao.update(l);
+	}
 }
 
 
