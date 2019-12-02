@@ -71,4 +71,9 @@ public class GestionAutoresBean {
 		return autores;
 	}
 	
+	public List<String> getNombreAutores(){
+		List<String> autores=gl.getNombreAutores();
+		return autores;
+	}
+	
 }

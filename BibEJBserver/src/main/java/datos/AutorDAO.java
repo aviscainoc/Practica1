@@ -40,4 +40,12 @@ public class AutorDAO {
 		List<Autor> autores = q.getResultList();
 		return autores;
 	}
+	
+	public List<String> getNombreAutores() {
+		String jpql = "SELECT a a.au_nombre FROM Autor a";
+		Query q = em.createQuery(jpql, Autor.class);
+		
+		List<String> autores = q.getResultList();
+		return autores;
+	}
 }

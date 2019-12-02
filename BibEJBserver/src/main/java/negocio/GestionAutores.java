@@ -26,4 +26,8 @@ public class GestionAutores implements GestionAutoresLocal, GestionAutoresRemote
 	public List<Autor> getAutores() {
 		return dao.getAutores();
 	}
+	
+	public List<String> getNombreAutores(){
+		return dao.getNombreAutores();
+	}
 }
