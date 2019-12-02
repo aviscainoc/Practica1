@@ -1,6 +1,5 @@
 package negocio;
 
-
 import java.util.Date;
 import java.util.List;
 
@@ -16,7 +15,6 @@ public class GestionLibros implements GestionLibrosRemote, GestionLibrosLocal {
 	@Inject
 	private LibroDAO dao;
 	
-	
 	public void guardarLibro(int li_codigo, String li_titulo, String autor, String fecha_publicacion){
 		System.out.println("gestion libros server");
 		Libro l = new Libro();  
@@ -26,27 +24,11 @@ public class GestionLibros implements GestionLibrosRemote, GestionLibrosLocal {
 		l.setFecha_publicacion(fecha_publicacion);
 		dao.insert(l);
 		l.toString();
-		
 	}
-
 	
 	public List<Libro> getLibros(){
 		return dao.getLibros();
 	}
-	
-
-	
-	
-	/*
-	public List<Libro> getLibrosPorNombre(String filtro){
-		
-		return dao.getLibrosXNombre(filtro);
-	}*/
-
-
-
-
-	
 }
 
 
