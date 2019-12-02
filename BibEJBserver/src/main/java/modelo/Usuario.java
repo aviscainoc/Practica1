@@ -1,12 +1,18 @@
 package modelo;
 
+import java.io.Serializable;
 import java.util.Date;
 
-public class Usuario {
+import javax.persistence.Entity;
+import javax.persistence.Id;
 
+@Entity
+public class Usuario implements Serializable {
+
+	@Id
 	private int us_codigo;
 	private String us_nombre;
-	private Date us_fechaNacimiento;
+	private String us_fechaNacimiento;
 	private String us_nickname;
 	private String us_password;
 	
@@ -22,10 +28,10 @@ public class Usuario {
 	public void setUs_nombre(String us_nombre) {
 		this.us_nombre = us_nombre;
 	}
-	public Date getUs_fechaNacimiento() {
+	public String getUs_fechaNacimiento() {
 		return us_fechaNacimiento;
 	}
-	public void setUs_fechaNacimiento(Date us_fechaNacimiento) {
+	public void setUs_fechaNacimiento(String us_fechaNacimiento) {
 		this.us_fechaNacimiento = us_fechaNacimiento;
 	}
 	public String getUs_nickname() {

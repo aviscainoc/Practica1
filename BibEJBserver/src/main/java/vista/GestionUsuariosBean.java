@@ -17,7 +17,7 @@ public class GestionUsuariosBean {
 
 	private int us_codigo;
 	private String us_nombre;
-	private Date us_fechaNacimiento;
+	private String us_fechaNacimiento;
 	private String us_nickname;
 	private String us_password;
 	
@@ -47,11 +47,11 @@ public class GestionUsuariosBean {
 		this.us_nombre = us_nombre;
 	}
 
-	public Date getUs_fechaNacimiento() {
+	public String getUs_fechaNacimiento() {
 		return us_fechaNacimiento;
 	}
 
-	public void setUs_fechaNacimiento(Date us_fechaNacimiento) {
+	public void setUs_fechaNacimiento(String us_fechaNacimiento) {
 		this.us_fechaNacimiento = us_fechaNacimiento;
 	}
 
@@ -79,11 +79,11 @@ public class GestionUsuariosBean {
 		this.usuarios = usuarios;
 	}
 	
-	public String guardarLibro() {
+	public String guardarUsuario() {
 		System.out.println(us_codigo + " " + us_nombre + " ");
 		gl.guardarUsuario(us_codigo, us_nombre, us_fechaNacimiento, us_nickname, us_password);
 		usuarios = gl.getUsuarios();
-		return "Guardado Correctamente";
+		return null;
 	}
 	
 }

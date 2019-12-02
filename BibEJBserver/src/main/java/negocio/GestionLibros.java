@@ -26,8 +26,8 @@ public class GestionLibros implements GestionLibrosRemote, GestionLibrosLocal {
 		dao.insert(l);
 	}
 
+	
 	public List<Libro> getLibros(){
-		
 		return dao.getLibros();
 	}
 	
