@@ -1,0 +1,64 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd"> 
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:ui="http://java.sun.com/jsf/facelets"
+      xmlns:f="http://java.sun.com/jsf/core"
+      xmlns:h="http://java.sun.com/jsf/html"> 
+
+<h:head></h:head> 
+<body> 
+
+<h1>Registrar nuevo libro</h1>
+
+
+<h:form>
+
+	<h:outputLabel > Codigo
+	</h:outputLabel>
+	
+	<h:inputText value="" placeholder="Codigo">###
+	</h:inputText>
+	
+	<h:outputLabel > Titulo
+	</h:outputLabel>
+	
+	<h:inputText value="" placeholder="Titulo">###
+	</h:inputText>
+	
+	<h:outputLabel > Autor
+	</h:outputLabel>
+	
+	<h:selectOneListbox value="" placeholder="Seleccione uno">
+	###</h:selectOneListbox>
+	
+	<h:outputLabel > Editorial
+	</h:outputLabel>
+	
+	<h:selectOneListbox value="" placeholder="Seleccione uno">
+	###</h:selectOneListbox>
+	
+	<h:commandButton action="" value="Ingresar" />
+
+<!-- Filtro de búsqueda : <h:inputText value="#{busquedaLibrosBean.filtro}"/>
+<h:commandButton action="#{busquedaLibrosBean.buscar()}" value="Buscar" />
+
+<h:dataTable value="#{busquedaLibrosBean.libros}" var="libro">
+
+	<h:column>
+		#{libro.codigo}
+		<f:facet name="header">Código</f:facet>
+	</h:column>
+	<h:column>
+		#{libro.titulo}
+		<f:facet name="header">Título</f:facet>
+	</h:column>
+
+</h:dataTable>
+
+
+<h:commandButton value="Regresar" action="guardar-libro">
+</h:commandButton> -->
+
+</h:form>
+
+</body> 
+</html>
