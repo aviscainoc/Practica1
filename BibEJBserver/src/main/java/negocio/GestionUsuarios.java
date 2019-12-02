@@ -40,6 +40,7 @@ public class GestionUsuarios implements GestionUsuariosRemote, GestionUsuariosLo
 		u.setUs_nombre(us_nombre);
 		u.setUs_password(us_password);
 		dao.update(u);
+	}
 
 	public Usuario login(String usuario, String contrasena) {
 		return dao.login(usuario, contrasena);

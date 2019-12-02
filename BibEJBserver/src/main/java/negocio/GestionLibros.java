@@ -39,6 +39,10 @@ public class GestionLibros implements GestionLibrosRemote, GestionLibrosLocal {
 		
 		dao.update(l);
 	}
+	
+	public void eliminar(int codigo) {
+		dao.remove(codigo);
+	}
 }
 
 
