@@ -14,7 +14,8 @@ public class GestionLibros implements GestionLibrosRemote {
 	@Inject
 	private LibroDAO dao;
 	
-	public void guardarLibro(int li_codigo, String li_titulo, Autor autor, Date fecha_publicacion){
+	@Override
+	public void guardarLibro(int li_codigo, String li_titulo, String autor, Date fecha_publicacion){
 		Libro l = new Libro();  
 		l.setLi_codigo(li_codigo);
 		l.setLi_titulo(li_titulo);
@@ -38,6 +39,10 @@ public class GestionLibros implements GestionLibrosRemote {
 		
 		return dao.getLibrosXNombre(filtro);
 	}*/
+
+
+
+	
 	
 	
 

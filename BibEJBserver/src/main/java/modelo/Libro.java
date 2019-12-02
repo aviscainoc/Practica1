@@ -9,7 +9,7 @@ public class Libro implements Serializable {
 	
 	private int li_codigo;
 	private String li_titulo;
-	private Autor autor;
+	private String autor;
 	private Date fecha_publicacion;
 	
 	
@@ -25,10 +25,10 @@ public class Libro implements Serializable {
 	public void setLi_titulo(String li_titulo) {
 		this.li_titulo = li_titulo;
 	}
-	public Autor getAutor() {
+	public String getAutor() {
 		return autor;
 	}
-	public void setAutor(Autor autor) {
+	public void setAutor(String autor) {
 		this.autor = autor;
 	}
 	public Date getFecha_publicacion() {
