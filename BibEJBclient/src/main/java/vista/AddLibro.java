@@ -52,6 +52,7 @@ public class AddLibro extends JFrame {
 		try {
 			this.conectarInstancias();
 		} catch (Exception e) {
+			System.out.println("no se ha conectado con las instancias");
 			e.printStackTrace();
 		}
 		
