@@ -50,7 +50,7 @@ public class AddUsuario extends JFrame {
 		}
 		
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-		setBounds(300,200,280,300);
+		setBounds(400,200,285,300);
 		cp = new JPanel();
 		setContentPane(cp);
 		cp.setLayout(new FlowLayout());
