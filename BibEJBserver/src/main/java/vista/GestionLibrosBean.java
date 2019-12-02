@@ -12,7 +12,6 @@ import modelo.Libro;
 import negocio.GestionLibros;
 
 @ManagedBean
-
 public class GestionLibrosBean {
 	
 	
