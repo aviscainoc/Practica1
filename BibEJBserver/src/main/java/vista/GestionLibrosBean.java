@@ -18,7 +18,7 @@ public class GestionLibrosBean {
 	
 
 	@Inject
-	private GestionLibrosLocal gl;
+	private GestionLibros gl = new GestionLibros();
 	
 	private int li_codigo;
 	private String li_titulo;
