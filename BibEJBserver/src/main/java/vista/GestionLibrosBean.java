@@ -64,6 +64,7 @@ public class GestionLibrosBean {
 	}
 
 	public List<Libro> getLibros() {
+		libros = gl.getLibros();
 		return libros;
 	}
 
