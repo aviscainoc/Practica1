@@ -12,7 +12,7 @@
 
 <h:form>
 
-<h:dataTable value="#{gestionLibrosBean.getLibros}" var="libro">
+<h:dataTable value="#{gestionLibrosBean.recuperarLibros()}" var="libro">
 
 	<h:column>
 		#{libro.li_codigo}
