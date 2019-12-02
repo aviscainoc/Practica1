@@ -29,6 +29,10 @@ public class GestionUsuarios implements GestionUsuariosRemote, GestionUsuariosLo
 	public List<Usuario> getUsuarios() {
 		return dao.getUsuarios();
 	}
+	
+	public Usuario login(String usuario, String contrasena) {
+		return dao.login(usuario, contrasena);
+	}
 
 	
 }

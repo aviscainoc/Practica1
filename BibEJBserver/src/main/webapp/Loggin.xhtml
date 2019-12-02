@@ -11,7 +11,6 @@
 
 
 <h:form>
-
 	<h:outputLabel > Usuario
 	</h:outputLabel>
 	
@@ -24,9 +23,13 @@
 	<h:inputText value="" placeholder="Ingrese su contrasena">
 	</h:inputText>
 	
-	<h:commandButton action="perfil" value="Ingresar" />
+	<h:commandButton id="usuario" action="#{gestionUsuariosBean.login()}" value="usuario" />
 
+	<h:inputText type="hidden" value=""></h:inputText>
 </h:form>
 
 </body> 
+<script type="text/javascript">
+
+</script>
 </html>

@@ -94,4 +94,9 @@ public class GestionUsuariosBean {
 		return usuarios;
 	}
 	
+	public Usuario login(String usuario, String contrasena) {
+		Usuario us = gl.login(usuario, contrasena);
+		return us;
+	}
+	
 }
