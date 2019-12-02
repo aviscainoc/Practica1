@@ -1,20 +1,23 @@
 package negocio;
 
-import java.sql.Date;
+
+import java.util.Date;
 import java.util.List;
 
+import javax.ejb.Stateless;
 import javax.inject.Inject;
 
 import datos.LibroDAO;
 import modelo.Autor;
 import modelo.Libro;
 
+@Stateless
 public class GestionLibros implements GestionLibrosRemote {
 	
 	@Inject
 	private LibroDAO dao;
 	
-	@Override
+	
 	public void guardarLibro(int li_codigo, String li_titulo, String autor, Date fecha_publicacion){
 		Libro l = new Libro();  
 		l.setLi_codigo(li_codigo);
@@ -25,11 +28,7 @@ public class GestionLibros implements GestionLibrosRemote {
 		
 	}
 
-	
 
-	@Override
-	
-	
 	public List<Libro> getLibros(){
 		
 		return dao.getLibros();
@@ -43,7 +42,10 @@ public class GestionLibros implements GestionLibrosRemote {
 
 
 	
-	
-	
-
 }
+
+
+
+	
+	
+	

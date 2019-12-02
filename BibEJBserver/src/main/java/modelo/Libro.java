@@ -3,10 +3,15 @@ package modelo;
 import java.io.Serializable;
 import java.util.Date;
 
+import javax.persistence.Entity;
+import javax.persistence.Id;
+
+@Entity
 public class Libro implements Serializable {
 	
 	private static final long serialVersionUID = -20336965027624681L;
 	
+	@Id
 	private int li_codigo;
 	private String li_titulo;
 	private String autor;
