@@ -10,6 +10,7 @@ import javax.inject.Inject;
 
 import modelo.Libro;
 import negocio.GestionLibros;
+import negocio.GestionLibrosLocal;
 
 @ManagedBean
 public class GestionLibrosBean {
@@ -17,37 +18,33 @@ public class GestionLibrosBean {
 	
 
 	@Inject
-	private GestionLibros gl;
+	private GestionLibrosLocal gl;
 	
-	private int codigo;
-	private String titulo;
+	private int li_codigo;
+	private String li_titulo;
 	private String autor;
-	private Date fecha;
+	private String fecha;
 	
 	private List<Libro> libros;
 
-	public GestionLibros getGl() {
-		return gl;
-	}
+	
 
-	public void setGl(GestionLibros gl) {
-		this.gl = gl;
-	}
+	
 
 	public int getCodigo() {
-		return codigo;
+		return li_codigo;
 	}
 
 	public void setCodigo(int codigo) {
-		this.codigo = codigo;
+		this.li_codigo = codigo;
 	}
 
 	public String getTitulo() {
-		return titulo;
+		return li_titulo;
 	}
 
 	public void setTitulo(String titulo) {
-		this.titulo = titulo;
+		this.li_titulo = titulo;
 	}
 
 	public String getAutor() {
@@ -58,11 +55,11 @@ public class GestionLibrosBean {
 		this.autor = autor;
 	}
 
-	public Date getFecha() {
+	public String getFecha() {
 		return fecha;
 	}
 
-	public void setFecha(Date fecha) {
+	public void setFecha(String fecha) {
 		this.fecha = fecha;
 	}
 
@@ -76,8 +73,8 @@ public class GestionLibrosBean {
 	
 public String guardarLibro() {
 		
-		System.out.println(codigo + "  " + titulo);
-		gl.guardarLibro(codigo, titulo, autor, fecha); 
+		System.out.println(li_codigo + "  " + li_titulo);
+		gl.guardarLibro(li_codigo, li_titulo, autor, fecha); 
 		
 		libros = gl.getLibros();
 		

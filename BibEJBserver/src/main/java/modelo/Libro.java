@@ -9,13 +9,13 @@ import javax.persistence.Id;
 @Entity
 public class Libro implements Serializable {
 	
-	private static final long serialVersionUID = -20336965027624681L;
+	//private static final long serialVersionUID = -20336965027624681L;
 	
 	@Id
 	private int li_codigo;
 	private String li_titulo;
 	private String autor;
-	private Date fecha_publicacion;
+	private String fecha_publicacion;
 	
 	
 	public int getLi_codigo() {
@@ -36,17 +36,21 @@ public class Libro implements Serializable {
 	public void setAutor(String autor) {
 		this.autor = autor;
 	}
-	public Date getFecha_publicacion() {
+	public String getFecha_publicacion() {
 		return fecha_publicacion;
 	}
-	public void setFecha_publicacion(Date fecha_publicacion) {
+	public void setFecha_publicacion(String fecha_publicacion) {
 		this.fecha_publicacion = fecha_publicacion;
 	}
-	
 	@Override
 	public String toString() {
 		return "Libro [li_codigo=" + li_codigo + ", li_titulo=" + li_titulo + ", autor=" + autor
 				+ ", fecha_publicacion=" + fecha_publicacion + "]";
 	}
 	
+	
+	
+	
+	
+
 }
