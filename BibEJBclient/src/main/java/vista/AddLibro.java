@@ -120,11 +120,8 @@ public class AddLibro extends JFrame {
             jndiProperties.put(Context.SECURITY_PRINCIPAL, "ejb");  
             jndiProperties.put(Context.SECURITY_CREDENTIALS, "ejb");  
               
-            final Context context = new InitialContext(jndiProperties);  
-              
+            final Context context = new InitialContext(jndiProperties);             
             final String lookupName = "ejb:/BibEJBserver/GestionLibros!negocio.GestionLibrosRemote";
-             
-            
             this.gl = (GestionLibrosRemote) context.lookup(lookupName);
             System.out.println("gl instaciado");
               
