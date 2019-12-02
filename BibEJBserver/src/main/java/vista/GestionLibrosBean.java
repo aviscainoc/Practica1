@@ -10,30 +10,33 @@ import javax.inject.Inject;
 
 import modelo.Libro;
 import negocio.GestionLibros;
+import negocio.GestionLibrosLocal;
 
 @ManagedBean
+
+/**
+ *  
+ *  @RequestScope
+ *
+ */
 
 public class GestionLibrosBean {
 	
 	
 
 	@Inject
-	private GestionLibros gl;
+	private GestionLibrosLocal gl;
 	
 	private int codigo;
 	private String titulo;
 	private String autor;
-	private Date fecha;
+	private String fecha;
 	
 	private List<Libro> libros;
 
-	public GestionLibros getGl() {
-		return gl;
-	}
+	
 
-	public void setGl(GestionLibros gl) {
-		this.gl = gl;
-	}
+	
 
 	public int getCodigo() {
 		return codigo;
@@ -59,11 +62,11 @@ public class GestionLibrosBean {
 		this.autor = autor;
 	}
 
-	public Date getFecha() {
+	public String getFecha() {
 		return fecha;
 	}
 
-	public void setFecha(Date fecha) {
+	public void setFecha(String fecha) {
 		this.fecha = fecha;
 	}
 

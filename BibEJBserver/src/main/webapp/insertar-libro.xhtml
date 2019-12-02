@@ -15,48 +15,31 @@
 	<h:outputLabel > Codigo
 	</h:outputLabel>
 	
-	<h:inputText value="#{gestionLibrosBean.}" placeholder="Codigo">###
+	<h:inputText value="#{gestionLibrosBean.codigo}" placeholder="Codigo">###
 	</h:inputText>
 	
 	<h:outputLabel > Titulo
 	</h:outputLabel>
 	
-	<h:inputText value="" placeholder="Titulo">###
+	<h:inputText value="#{gestionLibrosBean.titulo}" placeholder="Titulo">###
 	</h:inputText>
 	
 	<h:outputLabel > Autor
 	</h:outputLabel>
 	
-	<h:selectOneListbox value="" placeholder="Seleccione uno">
-	###</h:selectOneListbox>
+	<h:inputText value="#{gestionLibrosBean.autor}" placexholder="Autor">###
+	</h:inputText>
 	
-	<h:outputLabel > Editorial
+	<h:outputLabel > Fecha
 	</h:outputLabel>
 	
-	<h:selectOneListbox value="" placeholder="Seleccione uno">
-	###</h:selectOneListbox>
+	<h:inputText value="#{gestionLibrosBean.fecha}" placeholder="Titulo">###
+	</h:inputText>
 	
-	<h:commandButton action="" value="Ingresar" />
-
-<!-- Filtro de búsqueda : <h:inputText value="#{busquedaLibrosBean.filtro}"/>
-<h:commandButton action="#{busquedaLibrosBean.buscar()}" value="Buscar" />
-
-<h:dataTable value="#{busquedaLibrosBean.libros}" var="libro">
-
-	<h:column>
-		#{libro.codigo}
-		<f:facet name="header">Código</f:facet>
-	</h:column>
-	<h:column>
-		#{libro.titulo}
-		<f:facet name="header">Título</f:facet>
-	</h:column>
-
-</h:dataTable>
+	<h:commandButton value="Guardar" action="#{gestionLibrosBean.guardarLibro()}"  />
+	
 
 
-<h:commandButton value="Regresar" action="guardar-libro">
-</h:commandButton> -->
 
 </h:form>
 
