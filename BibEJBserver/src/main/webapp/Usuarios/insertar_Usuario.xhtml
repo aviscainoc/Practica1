@@ -6,6 +6,8 @@
 
 <h:head></h:head> 
 <h:body>
+<center><h1>Registrar Usuario</h1></center>
+<center>
 <h:form>
 	<h:panelGrid columns="2">
 		<h:outputLabel value="Codigo"></h:outputLabel>
@@ -24,8 +26,11 @@
 		<h:inputSecret id="txtPassword" value="#{gestionUsuariosBean.us_nombre}"></h:inputSecret>
 		
 		<h:commandButton  value="Guardar" action="#{gestionUsuariosBean.guardarUsuario()}"></h:commandButton>
+		<h:commandButton action="Principal" value="Regresar"></h:commandButton>
 	</h:panelGrid>
+	
 </h:form>
+</center>
 </h:body>
 
 </html>

@@ -8,8 +8,10 @@
 <h:body>
 <h:form>
 
-<h1>Eliminar Usuario</h1>
+<center><h1>Eliminar Usuario</h1></center>
+<center><h3>Ingrese el código del usuario a eliminar</h3></center>
 
+<center>
 	<h:panelGrid columns="2">
 		<h:inputSecret value="#{gestionUsuariosBean.us_codigo}">
 		</h:inputSecret>
@@ -17,8 +19,9 @@
 		<h:commandButton action="#{gestionUsuariosBean.eliminar()}" value="Eliminar">
 		</h:commandButton>
 	
+		<h:commandButton action="Principal" value="Regresar"></h:commandButton>
 	</h:panelGrid>
-
+</center>
 </h:form>
 </h:body>
 </html>
