@@ -15,7 +15,7 @@ public class GestionAutores implements GestionAutoresLocal, GestionAutoresRemote
 	@Inject
 	private AutorDAO dao;
 	
-	public void guardarUsuario(int au_codigo, String au_nombre, String au_fechaNacimiento) {
+	public void guardarAutor(int au_codigo, String au_nombre, String au_fechaNacimiento) {
 		Autor a = new Autor();
 		a.setAu_codigo(au_codigo);
 		a.setAu_nombre(au_nombre);
