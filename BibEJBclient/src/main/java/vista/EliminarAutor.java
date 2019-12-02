@@ -18,12 +18,10 @@ import javax.swing.JTextField;
 
 import negocio.GestionAutoresRemote;
 
-public class AddAutor extends JFrame {
+public class EliminarAutor extends JFrame {
 
 	private JPanel cp;
 	private JTextField txtId;
-	private JTextField txtNombre;
-	private JTextField txtFecha;
 	
 	GestionAutoresRemote gl;
 	
@@ -31,7 +29,7 @@ public class AddAutor extends JFrame {
 		EventQueue.invokeLater(new Runnable() {
 			public void run() {
 				try {
-					AddAutor frame = new AddAutor();
+					EliminarAutor frame = new EliminarAutor();
 					frame.setVisible(true);
 				} catch (Exception e) {
 					e.printStackTrace();
@@ -40,7 +38,7 @@ public class AddAutor extends JFrame {
 		});
 	}
 	
-	public AddAutor() {
+	public EliminarAutor() {
 		inicializar();
 	}
 	
@@ -52,45 +50,34 @@ public class AddAutor extends JFrame {
 			System.out.println("no se ha conectado con las instancias");
 			e.printStackTrace();
 		}
-				
+		
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		setBounds(100, 100, 450, 300);
 		cp = new JPanel();
 		setContentPane(cp);
 		cp.setLayout(new GridLayout(4,7));
+		
 		JLabel lblId = new JLabel("Código:");
 		txtId = new JTextField(15);
-		JLabel lblNombre = new JLabel("Nombre:");
-		txtNombre = new JTextField(15);
-		JLabel lblFecha = new JLabel("Fecha de Nacimiento:");
-		txtFecha = new JTextField(15);
-		JButton btnAdd = new JButton("Añadir autor");
+		JButton btnRemove = new JButton("Eliminar autor");
 		
-		btnAdd.addActionListener(new ActionListener() {
+		btnRemove.addActionListener(new ActionListener() {
 				@Override
 				public void actionPerformed(ActionEvent arg0) {
-					addAutor();
+					removeAutor();
 				}
 		});
 		
 		cp.add(lblId);
 		cp.add(txtId);
-		cp.add(lblNombre);
-		cp.add(txtNombre);
-		cp.add(lblFecha);
-		cp.add(txtFecha);
-		cp.add(btnAdd);
-
+		cp.add(btnRemove);
+		
 	}
 	
-	protected void addAutor() {
+	protected void removeAutor() {
 		int id = Integer.parseInt(txtId.getText());
-		String titulo = txtNombre.getText();
-		String autor = txtFecha.getText();
-		System.out.println(id);
-		System.out.println(titulo);
-		System.out.println(autor);
-		gl.guardarAutor(id, titulo, autor);
+		System.out.println(id + " eliminado..");
+		gl.remove(id);
 	}
 
 	public void conectarInstancias() throws Exception {

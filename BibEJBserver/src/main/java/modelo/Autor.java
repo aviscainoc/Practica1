@@ -1,5 +1,6 @@
 package modelo;
 
+import java.io.Serializable;
 import java.util.Date;
 
 
@@ -9,7 +10,7 @@ import javax.persistence.Id;
 
 @Entity
 
-public class Autor {
+public class Autor implements Serializable{
 	@Id
 	private int au_codigo;
 	private String au_nombre;
@@ -33,9 +34,9 @@ public class Autor {
 	public void setAu_fechaNacimiento(String au_fechaNacimiento) {
 		this.au_fechaNacimiento = au_fechaNacimiento;
 	}
-	
 	@Override
 	public String toString() {
-		return  ""+au_codigo ;
+		return "Autor [au_codigo=" + au_codigo + ", au_nombre=" + au_nombre + ", au_fechaNacimiento="
+				+ au_fechaNacimiento + "]";
 	}
 }
