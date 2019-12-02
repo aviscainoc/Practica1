@@ -1,5 +1,6 @@
 package vista;
 
+import java.awt.EventQueue;
 import java.awt.FlowLayout;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
@@ -24,15 +25,29 @@ public class AddLibro extends JFrame {
 	private JTextField txtId;
 	private JTextField txtTitulo;
 	private JTextField txtAutor;
-	private JTextField txtEditorial;
+	private JTextField txtPublicacion;
 	
 	GestionLibrosRemote gl;
+	
+	public static void main(String[] args) {
+		EventQueue.invokeLater(new Runnable() {
+			public void run() {
+				try {
+					AddLibro frame = new AddLibro();
+					frame.setVisible(true);
+				} catch (Exception e) {
+					e.printStackTrace();
+				}
+			}
+		});
+	}
+
 
 	public AddLibro() {
-		initialise();
+		inicializar();
 	}
 	
-	private void initialise() {
+	private void inicializar() {
 		
 		try {
 			this.conectarInstancias();
@@ -53,7 +68,7 @@ public class AddLibro extends JFrame {
 		JLabel lblAutor = new JLabel("Autor");
 		txtAutor = new JTextField(20);
 		JLabel lblEditorial = new JLabel("Editorial");
-		txtEditorial = new JTextField(20);
+		txtPublicacion = new JTextField(20);
 		
 		JButton btnAdd = new JButton("Añadir libro");
 		btnAdd.addActionListener(new ActionListener() {
@@ -70,7 +85,7 @@ public class AddLibro extends JFrame {
 		cp.add(lblAutor);
 		cp.add(txtAutor);
 		cp.add(lblEditorial);
-		cp.add(txtEditorial);
+		cp.add(txtPublicacion);
 		cp.add(btnAdd);
 		
 		
@@ -80,7 +95,7 @@ public class AddLibro extends JFrame {
 		int id = Integer.parseInt(txtId.getText());
 		String titulo = txtTitulo.getText();
 		String autor = txtAutor.getText();
-		String editorial = txtEditorial.getText();
+		String editorial = txtPublicacion.getText();
 		
 	}
 
