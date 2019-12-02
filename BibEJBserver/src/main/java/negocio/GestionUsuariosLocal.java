@@ -12,5 +12,5 @@ public interface GestionUsuariosLocal {
 	public List<Usuario> getUsuarios();
 	public void update(int us_codigo, String us_nombre, String us_fechaNacimiento, String us_nickname, String us_password);
 	public Usuario login(String usuario, String contrasena);
-
+	public void eliminar(int codigo);
 }

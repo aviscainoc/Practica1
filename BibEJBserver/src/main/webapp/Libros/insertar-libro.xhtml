@@ -11,6 +11,7 @@
 
 
 <h:form>
+	<h:panelGrid columns="2">
 
 	<h:outputLabel > Codigo
 	</h:outputLabel>
@@ -65,9 +66,9 @@
 	
 	<h:commandButton value="Guardar" action="#{gestionLibrosBean.guardarLibro()}"  />
 	
+	</h:panelGrid>
 
-
-
+	<h:commandButton action="Principal" value="Regresar"></h:commandButton>
 </h:form>
 
 </body> 

@@ -7,10 +7,11 @@
 <h:head></h:head> 
 <body> 
 
-<h1>Registrar nuevo libro</h1>
+<h1>Actualizar libro</h1>
 
 
 <h:form>
+	<h:panelGrid columns="2">
 
 	<h:outputLabel > Codigo
 	</h:outputLabel>
@@ -38,9 +39,10 @@
 	
 	<h:commandButton value="Guardar" action="#{gestionLibrosBean.update()}"  />
 	
+	</h:panelGrid>
 
 
-
+	<h:commandButton action="Principal" value="Regresar"></h:commandButton>
 </h:form>
 
 </body> 
