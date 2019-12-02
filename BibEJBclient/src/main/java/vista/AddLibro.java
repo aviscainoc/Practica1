@@ -67,7 +67,7 @@ public class AddLibro extends JFrame {
 		txtTitulo = new JTextField(20);
 		JLabel lblAutor = new JLabel("Autor");
 		txtAutor = new JTextField(20);
-		JLabel lblEditorial = new JLabel("Editorial");
+		JLabel lblPublicacion = new JLabel("Fecha de Publicación");
 		txtPublicacion = new JTextField(20);
 		
 		JButton btnAdd = new JButton("Añadir libro");
@@ -84,7 +84,7 @@ public class AddLibro extends JFrame {
 		cp.add(txtTitulo);
 		cp.add(lblAutor);
 		cp.add(txtAutor);
-		cp.add(lblEditorial);
+		cp.add(lblPublicacion);
 		cp.add(txtPublicacion);
 		cp.add(btnAdd);
 		
@@ -95,8 +95,8 @@ public class AddLibro extends JFrame {
 		int id = Integer.parseInt(txtId.getText());
 		String titulo = txtTitulo.getText();
 		String autor = txtAutor.getText();
-		String editorial = txtPublicacion.getText();
-		
+		String publicacion = txtPublicacion.getText();
+		gl.guardarLibro(id, titulo, autor, publicacion);
 	}
 
 	public void conectarInstancias() throws Exception {
