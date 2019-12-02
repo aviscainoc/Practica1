@@ -2,10 +2,18 @@ package modelo;
 
 import java.util.Date;
 
+
+
+import javax.persistence.Entity;
+import javax.persistence.Id;
+
+@Entity
+
 public class Autor {
+	@Id
 	private int au_codigo;
 	private String au_nombre;
-	private Date au_fechaNacimiento;
+	private String au_fechaNacimiento;
 	
 	public int getAu_codigo() {
 		return au_codigo;
@@ -19,10 +27,10 @@ public class Autor {
 	public void setAu_nombre(String au_nombre) {
 		this.au_nombre = au_nombre;
 	}
-	public Date getAu_fechaNacimiento() {
+	public String getAu_fechaNacimiento() {
 		return au_fechaNacimiento;
 	}
-	public void setAu_fechaNacimiento(Date au_fechaNacimiento) {
+	public void setAu_fechaNacimiento(String au_fechaNacimiento) {
 		this.au_fechaNacimiento = au_fechaNacimiento;
 	}
 	

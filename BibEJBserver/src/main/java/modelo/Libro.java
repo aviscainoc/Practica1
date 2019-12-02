@@ -3,9 +3,14 @@ package modelo;
 import java.io.Serializable;
 import java.util.Date;
 
+import javax.persistence.CascadeType;
 import javax.persistence.Column;
 import javax.persistence.Entity;
+import javax.persistence.FetchType;
 import javax.persistence.Id;
+import javax.persistence.JoinColumn;
+import javax.persistence.ManyToOne;
+import javax.persistence.OneToOne;
 
 @Entity
 public class Libro implements Serializable {
@@ -17,8 +22,12 @@ public class Libro implements Serializable {
 	private int li_codigo;
 	@Column(name="li_titulo")
 	private String li_titulo;
+	
+	@ManyToOne(cascade = CascadeType.ALL, fetch = FetchType.EAGER)
+	@JoinColumn(name="li_codigo")
 	@Column(name="li_autor")
-	private String autor;
+	private Autor autor;
+	
 	@Column(name="li_fecha")
 	private String fecha_publicacion;
 	
@@ -35,10 +44,10 @@ public class Libro implements Serializable {
 	public void setLi_titulo(String li_titulo) {
 		this.li_titulo = li_titulo;
 	}
-	public String getAutor() {
+	public Autor getAutor() {
 		return autor;
 	}
-	public void setAutor(String autor) {
+	public void setAutor(Autor autor) {
 		this.autor = autor;
 	}
 	public String getFecha_publicacion() {

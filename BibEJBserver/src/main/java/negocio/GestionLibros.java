@@ -7,6 +7,7 @@ import javax.ejb.Stateless;
 import javax.inject.Inject;
 
 import datos.LibroDAO;
+import modelo.Autor;
 import modelo.Libro;
 
 @Stateless
@@ -15,7 +16,7 @@ public class GestionLibros implements GestionLibrosRemote, GestionLibrosLocal {
 	@Inject
 	private LibroDAO dao;
 	
-	public void guardarLibro(int li_codigo, String li_titulo, String autor, String fecha_publicacion){
+	public void guardarLibro(int li_codigo, String li_titulo, Autor autor, String fecha_publicacion){
 		System.out.println("gestion libros server");
 		Libro l = new Libro();  
 		l.setLi_codigo(li_codigo);
@@ -30,7 +31,7 @@ public class GestionLibros implements GestionLibrosRemote, GestionLibrosLocal {
 		return dao.getLibros();
 	}
 	
-	public void update(int li_codigo, String li_titulo, String autor, String fecha_publicacion) {
+	public void update(int li_codigo, String li_titulo, Autor autor, String fecha_publicacion) {
 		Libro l = new Libro();
 		l.setLi_codigo(li_codigo);
 		l.setLi_titulo(li_titulo);
