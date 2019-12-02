@@ -2,6 +2,7 @@ package modelo;
 
 import java.util.Date;
 
+
 public class Autor {
 	private int au_codigo;
 	private String au_nombre;

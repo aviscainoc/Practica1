@@ -8,6 +8,7 @@ import javax.faces.bean.ManagedBean;
 import javax.faces.bean.SessionScoped;
 import javax.inject.Inject;
 
+import modelo.Autor;
 import modelo.Libro;
 import negocio.GestionLibros;
 import negocio.GestionLibrosLocal;
@@ -23,7 +24,7 @@ public class GestionLibrosBean {
 	
 	private int li_codigo;
 	private String li_titulo;
-	private String autor;
+	private Autor autor;
 	private String fecha;
 	
 	private List<Libro> libros;
@@ -48,11 +49,11 @@ public class GestionLibrosBean {
 		this.li_titulo = titulo;
 	}
 
-	public String getAutor() {
+	public Autor getAutor() {
 		return autor;
 	}
 
-	public void setAutor(String autor) {
+	public void setAutor(Autor autor) {
 		this.autor = autor;
 	}
 
