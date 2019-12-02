@@ -32,7 +32,4 @@ public class Prestamo {
 		return "Prestamo [pr_codigo=" + pr_codigo + ", pr_fecha_prestamo=" + pr_fecha_prestamo + ", pr_fecha_limite="
 				+ pr_fecha_limite + "]";
 	}
-	
-	
-
 }

@@ -13,13 +13,6 @@ import negocio.GestionLibros;
 import negocio.GestionLibrosLocal;
 
 @ManagedBean
-
-/**
- *  
- *  @RequestScope
- *
- */
-
 public class GestionLibrosBean {
 	
 	
