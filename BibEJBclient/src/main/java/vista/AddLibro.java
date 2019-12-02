@@ -96,6 +96,10 @@ public class AddLibro extends JFrame {
 		String titulo = txtTitulo.getText();
 		String autor = txtAutor.getText();
 		String publicacion = txtPublicacion.getText();
+		System.out.println(id);
+		System.out.println(titulo);
+		System.out.println(autor);
+		System.out.println(publicacion);
 		gl.guardarLibro(id, titulo, autor, publicacion);
 	}
 
