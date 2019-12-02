@@ -3,6 +3,7 @@ package modelo;
 import java.io.Serializable;
 import java.util.Date;
 
+import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.Id;
 
@@ -12,9 +13,13 @@ public class Libro implements Serializable {
 	//private static final long serialVersionUID = -20336965027624681L;
 	
 	@Id
+	@Column(name="li_codigo")
 	private int li_codigo;
+	@Column(name="li_titulo")
 	private String li_titulo;
+	@Column(name="li_autor")
 	private String autor;
+	@Column(name="li_fecha")
 	private String fecha_publicacion;
 	
 	

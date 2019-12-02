@@ -78,6 +78,7 @@ public class GestionLibrosBean {
 		gl.guardarLibro(li_codigo, li_titulo, autor, fecha); 
 		
 		libros = gl.getLibros();
+		System.out.println(libros);
 		
 		return "listar-libros";
 	}

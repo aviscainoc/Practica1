@@ -25,11 +25,13 @@ public class GestionLibros implements GestionLibrosRemote, GestionLibrosLocal {
 		l.setAutor(autor);
 		l.setFecha_publicacion(fecha_publicacion);
 		dao.insert(l);
+		l.toString();
 		
 	}
 
 	
 	public List<Libro> getLibros(){
+
 		return dao.getLibros();
 	}
 	
