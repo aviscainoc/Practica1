@@ -27,8 +27,8 @@ public class GestionLibrosBean {
 	@Inject
 	private GestionLibrosLocal gl;
 	
-	private int codigo;
-	private String titulo;
+	private int li_codigo;
+	private String li_titulo;
 	private String autor;
 	private String fecha;
 	
@@ -39,19 +39,19 @@ public class GestionLibrosBean {
 	
 
 	public int getCodigo() {
-		return codigo;
+		return li_codigo;
 	}
 
 	public void setCodigo(int codigo) {
-		this.codigo = codigo;
+		this.li_codigo = codigo;
 	}
 
 	public String getTitulo() {
-		return titulo;
+		return li_titulo;
 	}
 
 	public void setTitulo(String titulo) {
-		this.titulo = titulo;
+		this.li_titulo = titulo;
 	}
 
 	public String getAutor() {
@@ -80,8 +80,8 @@ public class GestionLibrosBean {
 	
 public String guardarLibro() {
 		
-		System.out.println(codigo + "  " + titulo);
-		gl.guardarLibro(codigo, titulo, autor, fecha); 
+		System.out.println(li_codigo + "  " + li_titulo);
+		gl.guardarLibro(li_codigo, li_titulo, autor, fecha); 
 		
 		libros = gl.getLibros();
 		

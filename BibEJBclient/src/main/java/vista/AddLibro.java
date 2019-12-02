@@ -113,7 +113,7 @@ public class AddLibro extends JFrame {
               
             final Context context = new InitialContext(jndiProperties);  
               
-            final String lookupName = "ejb:/testejbserver/GestionLibros!negocio.GestionLibrosRemote";
+            final String lookupName = "ejb:/BibEJBserver/GestionLibros!negocio.GestionLibrosRemote";
              
             
             this.gl = (GestionLibrosRemote) context.lookup(lookupName);
