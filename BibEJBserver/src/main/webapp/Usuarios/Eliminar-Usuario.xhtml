@@ -5,20 +5,20 @@
       xmlns:h="http://java.sun.com/jsf/html"> 
 
 <h:head></h:head> 
-<body> 
-
-<h1>Eliminar libro</h1>
-
-
+<h:body>
 <h:form>
-	<h:inputText value="#{gestionLibrosBean.codigo}">Codigo del libro</h:inputText>
 
+<h1>Eliminar Usuario</h1>
 
-
-<h:commandButton action="#{gestionLibrosBean.eliminar()}" value="Eliminar">
-</h:commandButton>
+	<h:panelGrid columns="2">
+		<h:inputSecret value="#{gestionUsuariosBean.us_codigo}">
+		</h:inputSecret>
+		
+		<h:commandButton action="#{gestionUsuariosBean.eliminar()}" value="Eliminar">
+		</h:commandButton>
+	
+	</h:panelGrid>
 
 </h:form>
-
-</body> 
+</h:body>
 </html>

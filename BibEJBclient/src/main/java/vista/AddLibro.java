@@ -88,8 +88,6 @@ public class AddLibro extends JFrame {
 		cp.add(lblPublicacion);
 		cp.add(txtPublicacion);
 		cp.add(btnAdd);
-		
-		
 	}
 	
 	protected void addLibro() {

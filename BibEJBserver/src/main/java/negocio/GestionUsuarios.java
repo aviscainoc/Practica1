@@ -47,5 +47,10 @@ public class GestionUsuarios implements GestionUsuariosRemote, GestionUsuariosLo
 
 	}
 
+	@Override
+	public void eliminar(int us_codigo) {
+		dao.remove(us_codigo);
+	}
+
 	
 }
