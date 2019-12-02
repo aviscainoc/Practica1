@@ -1,16 +1,13 @@
 package negocio;
 
-import java.util.Date;
 import java.util.List;
 
-import javax.ejb.Remote;
+import javax.ejb.Local;
 
 import modelo.Usuario;
 
-@Remote
-public interface GestionUsuariosRemote {
-
+@Local
+public interface GestionUsuariosLocal {
 	public void guardarUsuario(int us_codigo, String us_nombre, String us_fechaNacimiento, String us_nickname, String us_password);
 	public List<Usuario> getUsuarios();
-	
 }

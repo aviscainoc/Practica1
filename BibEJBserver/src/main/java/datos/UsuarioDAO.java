@@ -2,13 +2,14 @@ package datos;
 
 import java.util.List;
 
+import javax.ejb.Stateless;
 import javax.inject.Inject;
 import javax.persistence.EntityManager;
 import javax.persistence.Query;
 
-import modelo.Libro;
 import modelo.Usuario;
 
+@Stateless
 public class UsuarioDAO {
 	
 	@Inject

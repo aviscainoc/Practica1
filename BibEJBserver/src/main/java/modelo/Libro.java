@@ -52,10 +52,4 @@ public class Libro implements Serializable {
 		return "Libro [li_codigo=" + li_codigo + ", li_titulo=" + li_titulo + ", autor=" + autor
 				+ ", fecha_publicacion=" + fecha_publicacion + "]";
 	}
-	
-	
-	
-	
-	
-
 }

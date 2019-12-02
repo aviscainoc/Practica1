@@ -18,7 +18,8 @@ public class GestionLibrosBean {
 	
 
 	@Inject
-	private GestionLibros gl = new GestionLibros();
+	//private GestionLibros gl = new GestionLibros();
+	private GestionLibrosLocal gl;
 	
 	private int li_codigo;
 	private String li_titulo;
@@ -79,7 +80,7 @@ public class GestionLibrosBean {
 		libros = gl.getLibros();
 		System.out.println(libros);
 		
-		return "listado-libros";
+		return "listar-libros";
 	}
 	
 	public List<Libro> recuperarLibros() {
