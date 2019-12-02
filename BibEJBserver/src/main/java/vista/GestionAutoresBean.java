@@ -61,7 +61,7 @@ public class GestionAutoresBean {
 	
 	public String guardarAutor() {
 		System.out.println(au_codigo + " " + au_nombre + " ");
-		gl.guardarUsuario(au_codigo, au_nombre, au_fechaNacimiento);
+		gl.guardarAutor(au_codigo, au_nombre, au_fechaNacimiento);
 		autores = gl.getAutores();
 		return "Autor registrado";
 	}
