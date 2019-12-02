@@ -10,6 +10,7 @@ import javax.persistence.FetchType;
 import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
+import javax.persistence.OneToMany;
 import javax.persistence.OneToOne;
 
 @Entity
@@ -23,9 +24,9 @@ public class Libro implements Serializable {
 	@Column(name="li_titulo")
 	private String li_titulo;
 	
-	@ManyToOne(cascade = CascadeType.ALL, fetch = FetchType.EAGER)
+	@OneToOne(cascade = CascadeType.ALL, fetch = FetchType.EAGER)
 	@JoinColumn(name="li_codigo")
-	@Column(name="li_autor")
+	//@Column(name="li_autor")
 	private Autor autor;
 	
 	@Column(name="li_fecha")

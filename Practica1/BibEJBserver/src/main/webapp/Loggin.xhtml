@@ -1,0 +1,35 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd"> 
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:ui="http://java.sun.com/jsf/facelets"
+      xmlns:f="http://java.sun.com/jsf/core"
+      xmlns:h="http://java.sun.com/jsf/html"> 
+
+<h:head></h:head> 
+<body> 
+
+<h1>Inicio de sesion</h1>
+
+
+<h:form>
+	<h:outputLabel > Usuario
+	</h:outputLabel>
+	
+	<h:inputText value="" placeholder="Ingrese su usuario">
+	</h:inputText>
+	
+	<h:outputLabel > Contrasena
+	</h:outputLabel>
+	
+	<h:inputText value="" placeholder="Ingrese su contrasena">
+	</h:inputText>
+	
+	<h:commandButton id="usuario" action="#{gestionUsuariosBean.login()}" value="usuario" />
+
+	<h:inputText type="hidden" value=""></h:inputText>
+</h:form>
+
+</body> 
+<script type="text/javascript">
+
+</script>
+</html>

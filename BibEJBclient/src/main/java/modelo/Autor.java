@@ -1,16 +1,11 @@
 package modelo;
 
+import java.io.Serializable;
 import java.util.Date;
 
 
+public class Autor implements Serializable {
 
-import javax.persistence.Entity;
-import javax.persistence.Id;
-
-@Entity
-
-public class Autor {
-	@Id
 	private int au_codigo;
 	private String au_nombre;
 	private String au_fechaNacimiento;
@@ -36,6 +31,6 @@ public class Autor {
 	
 	@Override
 	public String toString() {
-		return  ""+au_codigo ;
+		return  "Autor [código: " + au_codigo + "nombre: " + au_nombre + "fechaNacimiento: " + au_fechaNacimiento + "]";
 	}
 }

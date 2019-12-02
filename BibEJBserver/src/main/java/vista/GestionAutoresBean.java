@@ -61,13 +61,26 @@ public class GestionAutoresBean {
 	
 	public String guardarAutor() {
 		System.out.println(au_codigo + " " + au_nombre + " ");
-		gl.guardarUsuario(au_codigo, au_nombre, au_fechaNacimiento);
+		gl.guardarAutor(au_codigo, au_nombre, au_fechaNacimiento);
 		autores = gl.getAutores();
 		return "Autor registrado";
 	}
 	
 	public List<Autor> recuperarAutores() {
 		autores = gl.getAutores();
+		return autores;
+	}
+	
+	public void eliminarAutores() {
+		gl.remove(au_codigo);
+	}
+	
+	public void actualizarAutor() {
+		gl.update(au_codigo, au_nombre, au_fechaNacimiento);
+	}
+
+	public List<String> getNombreAutores(){
+		List<String> autores=gl.getNombreAutores();
 		return autores;
 	}
 	
