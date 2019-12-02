@@ -50,7 +50,7 @@ public class AddUsuario extends JFrame {
 		}
 		
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-		setBounds(120,120,260,300);
+		setBounds(300,200,280,300);
 		cp = new JPanel();
 		setContentPane(cp);
 		cp.setLayout(new FlowLayout());
@@ -93,7 +93,10 @@ public class AddUsuario extends JFrame {
 		
 	}
 
+	
+
 protected void addUsuario(){
+	try {
 	int codigo = Integer.parseInt(txtCodigo.getText());
 	String nombre = txtNombre.getText();
 	String fechaNacimiento = txtFechaNacimiento.getText();
@@ -105,6 +108,11 @@ protected void addUsuario(){
 	System.out.println(nickname);
 	System.out.println(password);
 	gl.guardarUsuario(codigo, nombre, fechaNacimiento, nickname, password);
+	JOptionPane.showMessageDialog(null, "Ingresado Correctamente");
+	}catch(Exception e) {
+		JOptionPane.showMessageDialog(null, "Error");
+		e.printStackTrace(); 
+	}
 }
 
 public void conectarInstancias() throws Exception {
