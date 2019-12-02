@@ -10,4 +10,6 @@ import modelo.Autor;
 public interface GestionAutoresRemote {
 	public void guardarUsuario(int au_codigo, String au_nombre, String au_fechaNacimiento);
 	public List<Autor> getAutores();
+	public void update(int au_codigo, String au_nombre, String au_fechaNacimiento);
+	public void remove(int au_codigo);
 }

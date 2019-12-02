@@ -71,4 +71,12 @@ public class GestionAutoresBean {
 		return autores;
 	}
 	
+	public void eliminarAutores() {
+		gl.remove(au_codigo);
+	}
+	
+	public void actualizarAutor() {
+		gl.update(au_codigo, au_nombre, au_fechaNacimiento);
+	}
+	
 }
