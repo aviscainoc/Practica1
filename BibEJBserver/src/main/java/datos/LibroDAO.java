@@ -19,6 +19,7 @@ public class LibroDAO {
 	
 	public void insert(Libro libro) {
 		em.persist(libro);
+		System.out.println("se guardo");
 	}
 	
 	public void update(Libro libro) {
