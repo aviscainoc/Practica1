@@ -78,5 +78,10 @@ public class GestionAutoresBean {
 	public void actualizarAutor() {
 		gl.update(au_codigo, au_nombre, au_fechaNacimiento);
 	}
+
+	public List<String> getNombreAutores(){
+		List<String> autores=gl.getNombreAutores();
+		return autores;
+	}
 	
 }

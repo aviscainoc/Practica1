@@ -36,7 +36,6 @@ public class Autor {
 	
 	@Override
 	public String toString() {
-		return "Autor [au_codigo=" + au_codigo + ", au_nombre=" + au_nombre + ", au_fechaNacimiento="
-				+ au_fechaNacimiento + "]";
+		return  ""+au_codigo ;
 	}
 }

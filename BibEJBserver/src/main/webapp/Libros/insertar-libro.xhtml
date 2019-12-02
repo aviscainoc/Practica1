@@ -28,8 +28,35 @@
 	<h:outputLabel > Autor
 	</h:outputLabel>
 	
-	<h:inputText value="#{gestionLibrosBean.autor}" placexholder="Autor">###
+	<h:inputText value="#{gestionLibrosBean.autor}" placeholder="Codigo">###
 	</h:inputText>
+	
+	<!-- <h:selectOneMenu value="#{gestionAutoresBean.autores}">
+		<f:selectItems  value="#{gestionAutoresBean.recuperarAutores()}"/>
+	
+	</h:selectOneMenu> -->
+	
+	
+	
+	<!-- <h:dataTable value="#{gestionAutoresBean.recuperarAutores()}" var="autor">
+
+	<h:column>
+		#{autor}
+		<f:facet name="header">Código</f:facet>
+	</h:column>
+	<h:column>
+		#{usuario.us_nombre}
+		<f:facet name="header">Nombre</f:facet>
+	</h:column>
+
+</h:dataTable>
+	
+	
+	
+	
+	
+	<h:inputText value="#{gestionAutoresBean.recuperarAutores()}" placexholder="Autor">###
+	</h:inputText> -->
 	
 	<h:outputLabel > Fecha
 	</h:outputLabel>
@@ -41,7 +68,7 @@
 	
 	</h:panelGrid>
 
-
+	<h:commandButton action="Principal" value="Regresar"></h:commandButton>
 </h:form>
 
 </body> 

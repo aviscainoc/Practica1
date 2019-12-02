@@ -37,5 +37,9 @@ public class GestionAutores implements GestionAutoresLocal, GestionAutoresRemote
 	
 	public void remove(int au_codigo) {
 		dao.remove(au_codigo);
+    }
+
+	public List<String> getNombreAutores(){
+		return dao.getNombreAutores();
 	}
 }
