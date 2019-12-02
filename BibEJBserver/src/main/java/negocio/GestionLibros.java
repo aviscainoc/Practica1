@@ -1,9 +1,6 @@
 package negocio;
 
-<<<<<<< HEAD
 
-=======
->>>>>>> 2e77fc6dda98481ba786e64662eea604a35283c5
 import java.util.Date;
 import java.util.List;
 
@@ -30,20 +27,19 @@ public class GestionLibros implements GestionLibrosRemote {
 		dao.insert(l);
 	}
 
-<<<<<<< HEAD
 
-=======
 	@Override
->>>>>>> 2e77fc6dda98481ba786e64662eea604a35283c5
 	public List<Libro> getLibros(){
 		return dao.getLibros();
-	}
+		
+	}	
+	
 	/*
 	public List<Libro> getLibrosPorNombre(String filtro){
 		
 		return dao.getLibrosXNombre(filtro);
 	}*/
-<<<<<<< HEAD
+
 
 
 
@@ -55,6 +51,5 @@ public class GestionLibros implements GestionLibrosRemote {
 	
 	
 	
-=======
-}
->>>>>>> 2e77fc6dda98481ba786e64662eea604a35283c5
+
+
