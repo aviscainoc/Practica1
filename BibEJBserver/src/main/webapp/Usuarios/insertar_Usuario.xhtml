@@ -6,6 +6,7 @@
 
 <h:head></h:head> 
 <h:body>
+<h:form>
 	<h:panelGrid columns="2">
 		<h:outputLabel value="Codigo"></h:outputLabel>
 		<h:inputText id="txtCodigo" value= "#{gestionUsuariosBean.us_codigo}"></h:inputText>
@@ -22,7 +23,9 @@
 		<h:outputLabel value="Password"></h:outputLabel>
 		<h:inputSecret id="txtPassword" value="#{gestionUsuariosBean.us_nombre}"></h:inputSecret>
 		
-		<h:commandButton action="#{gestionUsuariosBean.guardarUsuario()}" value="Guardar"></h:commandButton>
+		<h:commandButton  value="Guardar" action="#{gestionUsuariosBean.guardarUsuario()}"></h:commandButton>
 	</h:panelGrid>
+</h:form>
 </h:body>
+
 </html>

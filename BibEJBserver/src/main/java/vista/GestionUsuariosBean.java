@@ -6,14 +6,17 @@ import java.util.List;
 import javax.faces.bean.ManagedBean;
 import javax.inject.Inject;
 
+import modelo.Libro;
 import modelo.Usuario;
 import negocio.GestionUsuarios;
+import negocio.GestionUsuariosLocal;
 
 @ManagedBean
 public class GestionUsuariosBean {
 	
 	@Inject
-	private GestionUsuarios gl;
+	//private GestionUsuarios gl = new GestionUsuarios();
+	private GestionUsuariosLocal gl;
 
 	private int us_codigo;
 	private String us_nombre;
@@ -23,7 +26,7 @@ public class GestionUsuariosBean {
 	
 	private List<Usuario> usuarios;
 
-	public GestionUsuarios getGl() {
+	public GestionUsuariosLocal getGl() {
 		return gl;
 	}
 
@@ -83,7 +86,12 @@ public class GestionUsuariosBean {
 		System.out.println(us_codigo + " " + us_nombre + " ");
 		gl.guardarUsuario(us_codigo, us_nombre, us_fechaNacimiento, us_nickname, us_password);
 		usuarios = gl.getUsuarios();
-		return null;
+		return "Registrado";
+	}
+	
+	public List<Usuario> recuperarUsuarios() {
+		usuarios = gl.getUsuarios();
+		return usuarios;
 	}
 	
 }
