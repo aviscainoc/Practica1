@@ -37,12 +37,12 @@ public class EditorialDAO {
 		return e;
 	}
 	
-	public List<Editorial> getEditoriales(){
-		String jpql = "SELECT l FROM Libro l";
+	public List<String> getEditoriales(){
+		String jpql = "SELECT l FROM Editorial l";
 		Query q = em.createQuery(jpql, Editorial.class);
 		
-		List<Editorial> libros = q.getResultList();
-		return libros;
+		List<String> editoriales = q.getResultList();
+		return editoriales;
 	}
 	
 }

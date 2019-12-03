@@ -8,7 +8,7 @@ public class Editorial {
 	private String ed_pais;
 	private String ed_nombre;
 	private String ed_fundador;
-	private Date ed_fundacion;
+	private String ed_fundacion;
 	
 	public int getEd_codigo() {
 		return ed_codigo;
@@ -34,11 +34,11 @@ public class Editorial {
 	public void setEd_fundador(String ed_fundador) {
 		this.ed_fundador = ed_fundador;
 	}
-	public Date getEd_fundacion() {
+	public String getEd_fundacion() {
 		return ed_fundacion;
 	}
-	public void setEd_fundacion(Date ed_fundacion) {
-		this.ed_fundacion = ed_fundacion;
+	public void setEd_fundacion(String ed_fundacion2) {
+		this.ed_fundacion = ed_fundacion2;
 	}
 	@Override
 	public String toString() {
