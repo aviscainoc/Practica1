@@ -10,17 +10,15 @@ import javax.persistence.Query;
 import modelo.Editorial;
 
 
+
 @Stateless
 public class EditorialDAO {
-	
 	
 	@Inject
 	private EntityManager em;
 	
-	
 	public void insert(Editorial editorial) {
 		em.persist(editorial);
-		System.out.println("editorial guardada");
 	}
 	
 	public void update(Editorial editorial) {
@@ -37,13 +35,20 @@ public class EditorialDAO {
 		return e;
 	}
 	
-	public List<String> getEditoriales(){
-		String jpql = "SELECT l FROM Editorial l";
+	public List<Editorial> getEditoriales() {
+		System.out.println("get editoriales");
+		String jpql = "SELECT a FROM Editorial a";
+		Query q = em.createQuery(jpql, Editorial.class);
+		
+		List<Editorial> editoriales = q.getResultList();
+		return editoriales;
+	}
+	
+	public List<String> getNombreEditoriales() {
+		String jpql = "SELECT a a.ed_nombre FROM Editorial a";
 		Query q = em.createQuery(jpql, Editorial.class);
 		
 		List<String> editoriales = q.getResultList();
 		return editoriales;
 	}
-	
 }
-
