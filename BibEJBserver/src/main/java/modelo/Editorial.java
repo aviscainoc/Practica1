@@ -1,13 +1,17 @@
 package modelo;
 
+import java.io.Serializable;
 import java.util.Date;
 
 import javax.persistence.Entity;
 import javax.persistence.Id;
 
+
 @Entity
 
-public class Editorial {
+public class Editorial implements Serializable{
+
+
 	@Id
 	private int ed_codigo;
 	private String ed_pais;

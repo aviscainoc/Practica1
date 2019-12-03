@@ -25,6 +25,7 @@ public class AddLibro extends JFrame {
 	private JTextField txtId;
 	private JTextField txtTitulo;
 	private JTextField txtAutor;
+	private JTextField txtEditorial;
 	private JTextField txtPublicacion;
 	
 	GestionLibrosRemote gl;
@@ -68,6 +69,8 @@ public class AddLibro extends JFrame {
 		txtTitulo = new JTextField(20);
 		JLabel lblAutor = new JLabel("Autor");
 		txtAutor = new JTextField(20);
+		JLabel lblEditorial = new JLabel("Editorial");
+		txtEditorial = new JTextField(20);
 		JLabel lblPublicacion = new JLabel("Fecha de Publicación");
 		txtPublicacion = new JTextField(20);
 		
@@ -85,6 +88,8 @@ public class AddLibro extends JFrame {
 		cp.add(txtTitulo);
 		cp.add(lblAutor);
 		cp.add(txtAutor);
+		cp.add(lblEditorial);
+		cp.add(txtEditorial);
 		cp.add(lblPublicacion);
 		cp.add(txtPublicacion);
 		cp.add(btnAdd);
@@ -94,12 +99,14 @@ public class AddLibro extends JFrame {
 		int id = Integer.parseInt(txtId.getText());
 		String titulo = txtTitulo.getText();
 		int autor = Integer.parseInt(txtAutor.getText());
+		int editorial = Integer.parseInt(txtEditorial.getText());
 		String publicacion = txtPublicacion.getText();
 		System.out.println(id);
 		System.out.println(titulo);
 		System.out.println(autor);
+		System.out.println(editorial);
 		System.out.println(publicacion);
-		gl.guardarLibro(id, titulo, autor, publicacion);
+		gl.guardarLibro(id, titulo, autor, editorial, publicacion);
 	}
 
 	public void conectarInstancias() throws Exception {

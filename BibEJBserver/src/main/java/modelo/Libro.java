@@ -29,8 +29,8 @@ public class Libro implements Serializable {
 	private Autor autor;
 	//@Column(name="li_autor")
 	
-	/*@ManyToOne(cascade = CascadeType.ALL)
-	private Editorial editorial;*/
+	@ManyToOne(cascade = CascadeType.ALL)
+	private Editorial editorial;
 	
 	
 	@Column(name="li_fecha")
@@ -62,16 +62,16 @@ public class Libro implements Serializable {
 		this.fecha_publicacion = fecha_publicacion;
 	}
 	
-	/*public Editorial getEditorial() {
+	public Editorial getEditorial() {
 		return editorial;
 	}
 	public void setEditorial(Editorial editorial) {
 		this.editorial = editorial;
-	}*/
+	}
 	@Override
 	public String toString() {
 		return "Libro [li_codigo=" + li_codigo + ", li_titulo=" + li_titulo + ", autor=" + autor + ", editorial="
-				//+ editorial 
+				+ editorial 
 				+ ", fecha_publicacion=" + fecha_publicacion + "]";
 	}
 	
