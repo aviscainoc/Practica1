@@ -2,8 +2,14 @@ package modelo;
 
 import java.util.Date;
 
+import javax.persistence.Entity;
+import javax.persistence.Id;
+
+
+@Entity
 public class Editorial {
 
+	@Id
 	private int ed_codigo;
 	private String ed_pais;
 	private String ed_nombre;

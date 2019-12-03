@@ -9,7 +9,7 @@ import modelo.Libro;
 @Remote
 public interface GestionLibrosRemote {
 	
-	public void guardarLibro(int li_codigo, String li_titulo, int codigoAutor, String fecha_publicacion);
+	public void guardarLibro(int li_codigo, String li_titulo, int codigoAutor, int codigoEditorial, String fecha_publicacion);
 	public List<Libro> getLibros();
 	public void update(int li_codigo, String li_titulo, String autor, String fecha_publicacion);
 	public void eliminar(int codigo);
