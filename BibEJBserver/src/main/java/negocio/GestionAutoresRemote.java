@@ -6,6 +6,7 @@ import javax.ejb.Remote;
 
 import modelo.Autor;
 
+
 @Remote
 public interface GestionAutoresRemote {
 	public void guardarAutor(int au_codigo, String au_nombre, String au_fechaNacimiento);

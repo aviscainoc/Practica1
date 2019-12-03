@@ -27,6 +27,7 @@ public class GestionLibrosBean {
 	private int codigoBusqueda;
 	private Autor autor;
 	private String fecha;
+	private int codigoBusquedaEditorial;
 	
 	
 	
@@ -85,11 +86,21 @@ public class GestionLibrosBean {
 	public void setCodigoBusqueda(int codigoBusqueda) {
 		this.codigoBusqueda = codigoBusqueda;
 	}
+	
+	
+
+	public int getCodigoBusquedaEditorial() {
+		return codigoBusquedaEditorial;
+	}
+
+	public void setCodigoBusquedaEditorial(int codigoBusquedaEditorial) {
+		this.codigoBusquedaEditorial = codigoBusquedaEditorial;
+	}
 
 	public String guardarLibro() {
 		
 		System.out.println(li_codigo + "  " + li_titulo + " " +fecha);
-		gl.guardarLibro(li_codigo, li_titulo, codigoBusqueda, fecha); 
+		gl.guardarLibro(li_codigo, li_titulo, codigoBusqueda, codigoBusquedaEditorial, fecha); 
 		
 		libros = gl.getLibros();
 		System.out.println(libros);

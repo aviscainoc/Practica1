@@ -47,7 +47,7 @@ public class GestionEditorial implements GestionEditorialLocal, GestionEditorial
     }
 
 	public List<String> getNombreEditoriales(){
-		return dao.getEditoriales();
+		return dao.getNombreEditoriales();
 	}
 
 	
