@@ -24,7 +24,7 @@ public class Libro implements Serializable {
 	@Column(name="li_titulo")
 	private String li_titulo;
 	
-	@OneToOne(cascade = CascadeType.ALL, fetch = FetchType.EAGER)
+	@OneToOne(cascade = CascadeType.ALL)
 	@JoinColumn(name="li_codigo")
 	//@Column(name="li_autor")
 	private Autor autor;
@@ -62,4 +62,6 @@ public class Libro implements Serializable {
 		return "Libro [li_codigo=" + li_codigo + ", li_titulo=" + li_titulo + ", autor=" + autor
 				+ ", fecha_publicacion=" + fecha_publicacion + "]";
 	}
+	
+	 
 }
