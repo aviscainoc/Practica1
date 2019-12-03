@@ -24,9 +24,11 @@
 		
 		<h:outputLabel value="Fundacion: " />
 		<h:inputText value="#{gestioneEditorialesBean.ed_fundacion}" placeholder="Fundacion" />
-	</h:panelGrid>
-	<h:commandButton action="#{gestioneEditorialesBean.guardarEditorial()}" value="Guardar" />
+		
+		<h:commandButton action="#{gestioneEditorialesBean.guardarEditorial()}" value="Guardar" />
 	<h:commandButton action="principal-editorial" value="Regresar"></h:commandButton>
+	</h:panelGrid>
+	
 </h:form>
 </body>   
 </html>
