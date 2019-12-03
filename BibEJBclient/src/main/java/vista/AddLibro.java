@@ -93,7 +93,7 @@ public class AddLibro extends JFrame {
 	protected void addLibro() {
 		int id = Integer.parseInt(txtId.getText());
 		String titulo = txtTitulo.getText();
-		String autor = txtAutor.getText();
+		int autor = Integer.parseInt(txtAutor.getText());
 		String publicacion = txtPublicacion.getText();
 		System.out.println(id);
 		System.out.println(titulo);
@@ -130,3 +130,8 @@ public class AddLibro extends JFrame {
         }  
 	}
 }
+
+
+
+
+
