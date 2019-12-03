@@ -5,47 +5,31 @@
       xmlns:h="http://java.sun.com/jsf/html"> 
 
 <h:head></h:head> 
-<body> 
-
-<h1>Registrar nuevo editorial</h1>
-
-
+<h:body>
+<center><h1>Actualizar Editorial</h1></center>
+<center>
 <h:form>
-
-	<h:outputLabel > Codigo
-	</h:outputLabel>
-	
-	<h:inputText value="#{gestioneEditorialesBean.ed_codigo}" placeholder="Codigo">###
-	</h:inputText>
-	
-	<h:outputLabel > Pais
-	</h:outputLabel>
-	
-	<h:inputText value="#{gestioneEditorialesBean.ed_pais}" placeholder="Pais">###
-	</h:inputText>
-	
-	<h:outputLabel > Nombre
-	</h:outputLabel>
-	
-	<h:inputText value="#{gestioneEditorialesBean.ed_nombre}" placexholder="Nombre">###
-	</h:inputText>
-	
-	<h:outputLabel > Fundador
-	</h:outputLabel>
-	
-	<h:inputText value="#{gestioneEditorialesBean.ed_fundador}" placeholder="Fundador">###
-	</h:inputText>
-	
-	<h:inputText value="#{gestioneEditorialesBean.ed_fundacion}" placeholder="Fundacion">###
-	</h:inputText>
-	
-	<h:commandButton value="Guardar" action="#{gestioneEditorialesBean.update()}"  />
-	<h:commandButton value="Regresar" action="principal-editorial"/>
-	
-
-
-
+	<h:panelGrid columns="2">
+		<h:outputLabel value="Codigo"></h:outputLabel>
+		<h:inputText id="txtCodigo" value="#{gestioneEditorialesBean.ed_codigo}"></h:inputText>
+		
+		<h:outputLabel value="Pais"></h:outputLabel>
+		<h:inputText id="txtPais" value="#{gestioneEditorialesBean.ed_pais}"></h:inputText>
+		
+		<h:outputLabel value="Nombre"></h:outputLabel>
+		<h:inputText id="txtNombre" value="#{gestioneEditorialesBean.ed_nombre}"></h:inputText>
+		
+		<h:outputLabel value="Fundador"></h:outputLabel>
+		<h:inputText id="txtFundador" value="#{gestioneEditorialesBean.ed_fundador}"></h:inputText>
+		
+		<h:outputLabel value="Fundacion"></h:outputLabel>
+		<h:inputText id="txtFundacion" value="#{gestioneEditorialesBean.ed_fundacion}"></h:inputText>
+		
+		<h:commandButton  value="Actualizar" action="#{gestionAutoresBean.actualizarAutor()}"></h:commandButton>
+		<h:commandButton action="principal-editorial" value="Regresar"></h:commandButton>
+	</h:panelGrid>
 </h:form>
+</center>
+</h:body>
 
-</body> 
 </html>

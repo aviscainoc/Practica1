@@ -7,29 +7,33 @@
 <h:head></h:head> 
 <body> 
 
-<h1>Editoriales guardadas</h1>
+<center><h1>Editoriales Registradas</h1></center>
 
-
+<center>
 <h:form>
 
-<h:dataTable value="#{gestioneEditorialesBean.recuperarEditoriales()}" var="Editorial">
+<h:dataTable value="#{gestioneEditorialesBean.recuperarEditoriales()}" var="editorial">
 
 	<h:column>
-		#{Editorial.ed_codigo}
+		#{editorial.ed_codigo}
 		<f:facet name="header">Código</f:facet>
 	</h:column>
 	<h:column>
-		#{Editorial.ed_nombre}
+		#{editorial.ed_nombre}
 		<f:facet name="header">Nombre</f:facet>
+	</h:column>
+	<h:column>
+		#{editorial.ed_pais}
+		<f:facet name="header">Pais</f:facet>
 	</h:column>
 
 </h:dataTable>
 
 
-<h:commandButton value="Regresar" action="principal-editorial"/>
-
+<h:commandButton action="principal-editorial" value="Regresar"></h:commandButton>
 
 </h:form>
+</center>
 
 </body> 
 </html>
