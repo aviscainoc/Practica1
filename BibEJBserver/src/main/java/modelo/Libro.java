@@ -24,10 +24,14 @@ public class Libro implements Serializable {
 	@Column(name="li_titulo")
 	private String li_titulo;
 	
-	@OneToOne(cascade = CascadeType.ALL, fetch = FetchType.EAGER)
-	@JoinColumn(name="li_codigo")
-	//@Column(name="li_autor")
+	@ManyToOne(cascade = CascadeType.ALL)
+	//@JoinColumn(name="li_codigo", insertable = false, updatable = false)
 	private Autor autor;
+	//@Column(name="li_autor")
+	
+	/*@ManyToOne(cascade = CascadeType.ALL)
+	private Editorial editorial;*/
+	
 	
 	@Column(name="li_fecha")
 	private String fecha_publicacion;
@@ -57,9 +61,22 @@ public class Libro implements Serializable {
 	public void setFecha_publicacion(String fecha_publicacion) {
 		this.fecha_publicacion = fecha_publicacion;
 	}
+	
+	/*public Editorial getEditorial() {
+		return editorial;
+	}
+	public void setEditorial(Editorial editorial) {
+		this.editorial = editorial;
+	}*/
 	@Override
 	public String toString() {
-		return "Libro [li_codigo=" + li_codigo + ", li_titulo=" + li_titulo + ", autor=" + autor
+		return "Libro [li_codigo=" + li_codigo + ", li_titulo=" + li_titulo + ", autor=" + autor + ", editorial="
+				//+ editorial 
 				+ ", fecha_publicacion=" + fecha_publicacion + "]";
 	}
+	
+	
+	
+	
+	 
 }

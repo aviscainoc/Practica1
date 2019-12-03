@@ -2,6 +2,7 @@ package vista;
 
 import java.awt.EventQueue;
 import java.awt.FlowLayout;
+import java.awt.GridLayout;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.util.Hashtable;
@@ -12,13 +13,13 @@ import javax.swing.JButton;
 import javax.swing.JFrame;
 import javax.swing.JLabel;
 import javax.swing.JPanel;
+import javax.swing.JTextArea;
 import javax.swing.JTextField;
 
 import negocio.GestionAutoresRemote;
-import negocio.GestionLibrosRemote;
 
 public class AddAutor extends JFrame {
-	
+
 	private JPanel cp;
 	private JTextField txtId;
 	private JTextField txtNombre;
@@ -44,32 +45,32 @@ public class AddAutor extends JFrame {
 	}
 	
 	private void inicializar() {
+		
 		try {
 			this.conectarInstancias();
 		} catch (Exception e) {
 			System.out.println("no se ha conectado con las instancias");
 			e.printStackTrace();
 		}
-		
+				
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		setBounds(100, 100, 450, 300);
 		cp = new JPanel();
 		setContentPane(cp);
-		cp.setLayout(new FlowLayout());
-		
-		JLabel lblId = new JLabel("Código");
-		txtId = new JTextField(10);
-		JLabel lblNombre = new JLabel("Nombre");
-		txtNombre = new JTextField(10);
-		JLabel lblFecha = new JLabel("Fecha de Nacimiento");
-		txtFecha = new JTextField(10);
-		
+		cp.setLayout(new GridLayout(4,7));
+		JLabel lblId = new JLabel("Código:");
+		txtId = new JTextField(15);
+		JLabel lblNombre = new JLabel("Nombre:");
+		txtNombre = new JTextField(15);
+		JLabel lblFecha = new JLabel("Fecha de Nacimiento:");
+		txtFecha = new JTextField(15);
 		JButton btnAdd = new JButton("Añadir autor");
+		
 		btnAdd.addActionListener(new ActionListener() {
-			@Override
-			public void actionPerformed(ActionEvent arg0) {
-				addAutor();
-			}
+				@Override
+				public void actionPerformed(ActionEvent arg0) {
+					addAutor();
+				}
 		});
 		
 		cp.add(lblId);
@@ -79,6 +80,7 @@ public class AddAutor extends JFrame {
 		cp.add(lblFecha);
 		cp.add(txtFecha);
 		cp.add(btnAdd);
+
 	}
 	
 	protected void addAutor() {

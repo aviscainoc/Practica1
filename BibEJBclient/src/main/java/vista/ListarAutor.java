@@ -1,39 +1,37 @@
 package vista;
 
 import java.awt.EventQueue;
-import java.awt.FlowLayout;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.util.Hashtable;
+import java.util.List;
 
+import javax.naming.Context;
+import javax.naming.InitialContext;
 import javax.swing.JButton;
 import javax.swing.JFrame;
 import javax.swing.JLabel;
 import javax.swing.JPanel;
-import javax.swing.JTextField;
+import javax.swing.JTextArea;
 
-import modelo.Libro;
-import negocio.GestionLibrosRemote;
+import modelo.Autor;
+import modelo.Usuario;
+import negocio.GestionAutoresRemote;
 
-import java.util.Hashtable;
+public class ListarAutor extends JFrame {
 
-import javax.naming.Context;
-import javax.naming.InitialContext;
-
-public class AddLibro extends JFrame {
-	
 	private JPanel cp;
-	private JTextField txtId;
-	private JTextField txtTitulo;
-	private JTextField txtAutor;
-	private JTextField txtPublicacion;
+	private JButton btn;
+	private JTextArea txtCodigo = new JTextArea();
+	private JLabel lblCodigo;
 	
-	GestionLibrosRemote gl;
+	GestionAutoresRemote gl;
 	
 	public static void main(String[] args) {
 		EventQueue.invokeLater(new Runnable() {
 			public void run() {
 				try {
-					AddLibro frame = new AddLibro();
+					ListarAutor frame = new ListarAutor();
 					frame.setVisible(true);
 				} catch (Exception e) {
 					e.printStackTrace();
@@ -41,12 +39,11 @@ public class AddLibro extends JFrame {
 			}
 		});
 	}
-
-
-	public AddLibro() {
+	
+	public ListarAutor() {
 		inicializar();
 	}
-	
+
 	private void inicializar() {
 		
 		try {
@@ -55,53 +52,35 @@ public class AddLibro extends JFrame {
 			System.out.println("no se ha conectado con las instancias");
 			e.printStackTrace();
 		}
-		
+				
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		setBounds(100, 100, 450, 300);
 		cp = new JPanel();
 		setContentPane(cp);
-		cp.setLayout(new FlowLayout());
 		
-		JLabel lblId = new JLabel("Código");
-		txtId = new JTextField(20);
-		JLabel lblTitulo = new JLabel("Título");
-		txtTitulo = new JTextField(20);
-		JLabel lblAutor = new JLabel("Autor");
-		txtAutor = new JTextField(20);
-		JLabel lblPublicacion = new JLabel("Fecha de Publicación");
-		txtPublicacion = new JTextField(20);
+		lblCodigo = new  JLabel("LISTAR USUARIOS");
 		
-		JButton btnAdd = new JButton("Añadir libro");
-		btnAdd.addActionListener(new ActionListener() {
+		btn = new JButton("Listar");
+		btn.addActionListener(new ActionListener() {
 			@Override
 			public void actionPerformed(ActionEvent arg0) {
-				addLibro();
+				listar();
 			}
 		});
-		
-		cp.add(lblId);
-		cp.add(txtId);
-		cp.add(lblTitulo);
-		cp.add(txtTitulo);
-		cp.add(lblAutor);
-		cp.add(txtAutor);
-		cp.add(lblPublicacion);
-		cp.add(txtPublicacion);
-		cp.add(btnAdd);
+		cp.add(lblCodigo);
+		listar();
+		cp.add(txtCodigo);
+		cp.add(btn);		
 	}
 	
-	protected void addLibro() {
-		int id = Integer.parseInt(txtId.getText());
-		String titulo = txtTitulo.getText();
-		int autor = Integer.parseInt(txtAutor.getText());
-		String publicacion = txtPublicacion.getText();
-		System.out.println(id);
-		System.out.println(titulo);
-		System.out.println(autor);
-		System.out.println(publicacion);
-		gl.guardarLibro(id, titulo, autor, publicacion);
+	public void listar() {
+		txtCodigo.setText("");
+		List<Autor> autores = gl.getAutores();
+		for (Autor a: autores) {
+			txtCodigo.append(a.toString()+"\n");
+		}
 	}
-
+	
 	public void conectarInstancias() throws Exception {
 		try {  
             final Hashtable<String, Comparable> jndiProperties =  
@@ -119,8 +98,8 @@ public class AddLibro extends JFrame {
             jndiProperties.put(Context.SECURITY_CREDENTIALS, "ejb");  
               
             final Context context = new InitialContext(jndiProperties);             
-            final String lookupName = "ejb:/BibEJBserver/GestionLibros!negocio.GestionLibrosRemote";
-            this.gl = (GestionLibrosRemote) context.lookup(lookupName);
+            final String lookupName = "ejb:/BibEJBserver/GestionAutores!negocio.GestionAutoresRemote";
+            this.gl = (GestionAutoresRemote) context.lookup(lookupName);
             System.out.println("gl instaciado");
               
         } catch (Exception ex) {  
@@ -130,8 +109,3 @@ public class AddLibro extends JFrame {
         }  
 	}
 }
-
-
-
-
-

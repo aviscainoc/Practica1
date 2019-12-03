@@ -1,0 +1,32 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd"> 
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:ui="http://java.sun.com/jsf/facelets"
+      xmlns:f="http://java.sun.com/jsf/core"
+      xmlns:h="http://java.sun.com/jsf/html"> 
+
+<h:head></h:head> 
+<body>
+<h1>Registrar una nueva editorial</h1>
+
+<h:form>
+	<h:panelGrid columns="2">
+		<h:outputLabel value="Código: " />
+		<h:inputText value="#{gestioneEditorialesBean.ed_codigo}" placeholder="Código" />
+		
+		<h:outputLabel value="Pais: " />
+		<h:inputText value="#{gestioneEditorialesBean.ed_pais}" placeholder="Pais" />
+		
+		<h:outputLabel value="Nombre: " />
+		<h:inputText value="#{gestioneEditorialesBean.ed_nombre}" placeholder="Nombre" />
+		
+		<h:outputLabel value="Fundador: " />
+		<h:inputText value="#{gestioneEditorialesBean.ed_fundador}" placeholder="Fundador" />	
+		
+		<h:outputLabel value="Fundacion: " />
+		<h:inputText value="#{gestioneEditorialesBean.ed_fundacion}" placeholder="Fundacion" />
+	</h:panelGrid>
+	<h:commandButton action="#{gestioneEditorialesBean.guardarEditorial()}" value="Guardar" />
+	<h:commandButton action="principal-editorial" value="Regresar"></h:commandButton>
+</h:form>
+</body>   
+</html>

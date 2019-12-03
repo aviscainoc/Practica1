@@ -24,8 +24,11 @@ public class GestionLibrosBean {
 	
 	private int li_codigo;
 	private String li_titulo;
+	private int codigoBusqueda;
 	private Autor autor;
 	private String fecha;
+	
+	
 	
 	private List<Libro> libros;
 
@@ -73,10 +76,20 @@ public class GestionLibrosBean {
 		this.libros = libros;
 	}
 	
+	
+	
+	public int getCodigoBusqueda() {
+		return codigoBusqueda;
+	}
+
+	public void setCodigoBusqueda(int codigoBusqueda) {
+		this.codigoBusqueda = codigoBusqueda;
+	}
+
 	public String guardarLibro() {
 		
-		System.out.println(li_codigo + "  " + li_titulo + " " + autor + " " +fecha);
-		gl.guardarLibro(li_codigo, li_titulo, autor, fecha); 
+		System.out.println(li_codigo + "  " + li_titulo + " " +fecha);
+		gl.guardarLibro(li_codigo, li_titulo, codigoBusqueda, fecha); 
 		
 		libros = gl.getLibros();
 		System.out.println(libros);
@@ -97,4 +110,8 @@ public class GestionLibrosBean {
 	public void eliminar() {
 		gl.eliminar(li_codigo);
 	}
+	
+	/*public void enlazarAutor() {
+		gl.enlazarAutor(codigoBusqueda);
+	}*/
 }

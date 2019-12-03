@@ -4,22 +4,19 @@ import java.awt.EventQueue;
 import java.awt.FlowLayout;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.util.Hashtable;
 
+import javax.naming.Context;
+import javax.naming.InitialContext;
 import javax.swing.JButton;
 import javax.swing.JFrame;
 import javax.swing.JLabel;
 import javax.swing.JPanel;
 import javax.swing.JTextField;
 
-import modelo.Libro;
 import negocio.GestionLibrosRemote;
 
-import java.util.Hashtable;
-
-import javax.naming.Context;
-import javax.naming.InitialContext;
-
-public class AddLibro extends JFrame {
+public class updateLibro extends JFrame {
 	
 	private JPanel cp;
 	private JTextField txtId;
@@ -43,7 +40,7 @@ public class AddLibro extends JFrame {
 	}
 
 
-	public AddLibro() {
+	public updateLibro() {
 		inicializar();
 	}
 	
@@ -71,11 +68,11 @@ public class AddLibro extends JFrame {
 		JLabel lblPublicacion = new JLabel("Fecha de Publicación");
 		txtPublicacion = new JTextField(20);
 		
-		JButton btnAdd = new JButton("Añadir libro");
+		JButton btnAdd = new JButton("Actualizar libro");
 		btnAdd.addActionListener(new ActionListener() {
 			@Override
 			public void actionPerformed(ActionEvent arg0) {
-				addLibro();
+				updateLibro();
 			}
 		});
 		
@@ -90,16 +87,16 @@ public class AddLibro extends JFrame {
 		cp.add(btnAdd);
 	}
 	
-	protected void addLibro() {
+	protected void updateLibro() {
 		int id = Integer.parseInt(txtId.getText());
 		String titulo = txtTitulo.getText();
-		int autor = Integer.parseInt(txtAutor.getText());
+		String autor = txtAutor.getText();
 		String publicacion = txtPublicacion.getText();
 		System.out.println(id);
 		System.out.println(titulo);
 		System.out.println(autor);
 		System.out.println(publicacion);
-		gl.guardarLibro(id, titulo, autor, publicacion);
+		gl.update(id, titulo, autor, publicacion);
 	}
 
 	public void conectarInstancias() throws Exception {
@@ -129,9 +126,6 @@ public class AddLibro extends JFrame {
             throw ex;  
         }  
 	}
+
+
 }
-
-
-
-
-

@@ -4,22 +4,19 @@ import java.awt.EventQueue;
 import java.awt.FlowLayout;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.util.Hashtable;
 
+import javax.naming.Context;
+import javax.naming.InitialContext;
 import javax.swing.JButton;
 import javax.swing.JFrame;
 import javax.swing.JLabel;
 import javax.swing.JPanel;
 import javax.swing.JTextField;
 
-import modelo.Libro;
 import negocio.GestionLibrosRemote;
 
-import java.util.Hashtable;
-
-import javax.naming.Context;
-import javax.naming.InitialContext;
-
-public class AddLibro extends JFrame {
+public class removeLibro extends JFrame {
 	
 	private JPanel cp;
 	private JTextField txtId;
@@ -43,7 +40,7 @@ public class AddLibro extends JFrame {
 	}
 
 
-	public AddLibro() {
+	public removeLibro() {
 		inicializar();
 	}
 	
@@ -64,42 +61,30 @@ public class AddLibro extends JFrame {
 		
 		JLabel lblId = new JLabel("Código");
 		txtId = new JTextField(20);
-		JLabel lblTitulo = new JLabel("Título");
-		txtTitulo = new JTextField(20);
-		JLabel lblAutor = new JLabel("Autor");
-		txtAutor = new JTextField(20);
-		JLabel lblPublicacion = new JLabel("Fecha de Publicación");
-		txtPublicacion = new JTextField(20);
-		
-		JButton btnAdd = new JButton("Añadir libro");
+				
+		JButton btnAdd = new JButton("Borrar libro");
 		btnAdd.addActionListener(new ActionListener() {
 			@Override
 			public void actionPerformed(ActionEvent arg0) {
-				addLibro();
+				borrarLibro();
 			}
 		});
 		
 		cp.add(lblId);
 		cp.add(txtId);
-		cp.add(lblTitulo);
-		cp.add(txtTitulo);
-		cp.add(lblAutor);
-		cp.add(txtAutor);
-		cp.add(lblPublicacion);
-		cp.add(txtPublicacion);
 		cp.add(btnAdd);
 	}
 	
-	protected void addLibro() {
+	protected void borrarLibro() {
 		int id = Integer.parseInt(txtId.getText());
 		String titulo = txtTitulo.getText();
-		int autor = Integer.parseInt(txtAutor.getText());
+		String autor = txtAutor.getText();
 		String publicacion = txtPublicacion.getText();
 		System.out.println(id);
 		System.out.println(titulo);
 		System.out.println(autor);
 		System.out.println(publicacion);
-		gl.guardarLibro(id, titulo, autor, publicacion);
+		gl.eliminar(id);
 	}
 
 	public void conectarInstancias() throws Exception {
@@ -118,7 +103,7 @@ public class AddLibro extends JFrame {
             jndiProperties.put(Context.SECURITY_PRINCIPAL, "ejb");  
             jndiProperties.put(Context.SECURITY_CREDENTIALS, "ejb");  
               
-            final Context context = new InitialContext(jndiProperties);             
+            final Context context = new InitialContext(jndiProperties);             	
             final String lookupName = "ejb:/BibEJBserver/GestionLibros!negocio.GestionLibrosRemote";
             this.gl = (GestionLibrosRemote) context.lookup(lookupName);
             System.out.println("gl instaciado");
@@ -128,10 +113,6 @@ public class AddLibro extends JFrame {
         	ex.printStackTrace();  
             throw ex;  
         }  
-	}
+	} 
+
 }
-
-
-
-
-

@@ -9,7 +9,29 @@
 
 <h1>Registrar nuevo libro</h1>
 
+<center><h1>Autores Registrados</h1></center>
 
+<center>
+<h:form>
+
+<h:dataTable value="#{gestionAutoresBean.recuperarAutores()}" var="autor">
+
+	<h:column>
+		#{autor.au_codigo}
+		<f:facet name="header">Código</f:facet>
+	</h:column>
+	<h:column>
+		#{autor.au_nombre}
+		<f:facet name="header">Nombre</f:facet>
+	</h:column>
+
+</h:dataTable>
+
+
+<h:commandButton action="principal-autor" value="Regresar"></h:commandButton>
+
+</h:form>
+</center>
 <h:form>
 	<h:panelGrid columns="2">
 
@@ -28,10 +50,13 @@
 	<h:outputLabel > Autor
 	</h:outputLabel>
 	
-	<h:inputText value="#{gestionLibrosBean.autor}" placeholder="Codigo">###
+	<h:inputText value="#{gestionLibrosBean.codigoBusqueda}" placeholder="">###
 	</h:inputText>
 	
-	<!-- <h:selectOneMenu value="#{gestionAutoresBean.autores}">
+	<!--  <h:inputText value="#{gestionLibrosBean.autor}" placeholder="Codigo">###
+	</h:inputText>
+	
+	<h:selectOneMenu value="#{gestionAutoresBean.autores}">
 		<f:selectItems  value="#{gestionAutoresBean.recuperarAutores()}"/>
 	
 	</h:selectOneMenu> -->

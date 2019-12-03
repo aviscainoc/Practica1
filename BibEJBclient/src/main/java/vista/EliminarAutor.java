@@ -2,38 +2,34 @@ package vista;
 
 import java.awt.EventQueue;
 import java.awt.FlowLayout;
+import java.awt.GridLayout;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
-
-import javax.swing.JButton;
-import javax.swing.JFrame;
-import javax.swing.JLabel;
-import javax.swing.JPanel;
-import javax.swing.JTextField;
-
-import modelo.Libro;
-import negocio.GestionLibrosRemote;
-
 import java.util.Hashtable;
 
 import javax.naming.Context;
 import javax.naming.InitialContext;
+import javax.swing.JButton;
+import javax.swing.JFrame;
+import javax.swing.JLabel;
+import javax.swing.JPanel;
+import javax.swing.JTextArea;
+import javax.swing.JTextField;
 
-public class AddLibro extends JFrame {
-	
+import negocio.GestionAutoresRemote;
+
+public class EliminarAutor extends JFrame {
+
 	private JPanel cp;
 	private JTextField txtId;
-	private JTextField txtTitulo;
-	private JTextField txtAutor;
-	private JTextField txtPublicacion;
 	
-	GestionLibrosRemote gl;
+	GestionAutoresRemote gl;
 	
 	public static void main(String[] args) {
 		EventQueue.invokeLater(new Runnable() {
 			public void run() {
 				try {
-					AddLibro frame = new AddLibro();
+					EliminarAutor frame = new EliminarAutor();
 					frame.setVisible(true);
 				} catch (Exception e) {
 					e.printStackTrace();
@@ -41,9 +37,8 @@ public class AddLibro extends JFrame {
 			}
 		});
 	}
-
-
-	public AddLibro() {
+	
+	public EliminarAutor() {
 		inicializar();
 	}
 	
@@ -60,46 +55,29 @@ public class AddLibro extends JFrame {
 		setBounds(100, 100, 450, 300);
 		cp = new JPanel();
 		setContentPane(cp);
-		cp.setLayout(new FlowLayout());
+		cp.setLayout(new GridLayout(4,7));
 		
-		JLabel lblId = new JLabel("Código");
-		txtId = new JTextField(20);
-		JLabel lblTitulo = new JLabel("Título");
-		txtTitulo = new JTextField(20);
-		JLabel lblAutor = new JLabel("Autor");
-		txtAutor = new JTextField(20);
-		JLabel lblPublicacion = new JLabel("Fecha de Publicación");
-		txtPublicacion = new JTextField(20);
+		JLabel lblId = new JLabel("Código:");
+		txtId = new JTextField(15);
+		JButton btnRemove = new JButton("Eliminar autor");
 		
-		JButton btnAdd = new JButton("Añadir libro");
-		btnAdd.addActionListener(new ActionListener() {
-			@Override
-			public void actionPerformed(ActionEvent arg0) {
-				addLibro();
-			}
+		btnRemove.addActionListener(new ActionListener() {
+				@Override
+				public void actionPerformed(ActionEvent arg0) {
+					removeAutor();
+				}
 		});
 		
 		cp.add(lblId);
 		cp.add(txtId);
-		cp.add(lblTitulo);
-		cp.add(txtTitulo);
-		cp.add(lblAutor);
-		cp.add(txtAutor);
-		cp.add(lblPublicacion);
-		cp.add(txtPublicacion);
-		cp.add(btnAdd);
+		cp.add(btnRemove);
+		
 	}
 	
-	protected void addLibro() {
+	protected void removeAutor() {
 		int id = Integer.parseInt(txtId.getText());
-		String titulo = txtTitulo.getText();
-		int autor = Integer.parseInt(txtAutor.getText());
-		String publicacion = txtPublicacion.getText();
-		System.out.println(id);
-		System.out.println(titulo);
-		System.out.println(autor);
-		System.out.println(publicacion);
-		gl.guardarLibro(id, titulo, autor, publicacion);
+		System.out.println(id + " eliminado..");
+		gl.remove(id);
 	}
 
 	public void conectarInstancias() throws Exception {
@@ -119,8 +97,8 @@ public class AddLibro extends JFrame {
             jndiProperties.put(Context.SECURITY_CREDENTIALS, "ejb");  
               
             final Context context = new InitialContext(jndiProperties);             
-            final String lookupName = "ejb:/BibEJBserver/GestionLibros!negocio.GestionLibrosRemote";
-            this.gl = (GestionLibrosRemote) context.lookup(lookupName);
+            final String lookupName = "ejb:/BibEJBserver/GestionAutores!negocio.GestionAutoresRemote";
+            this.gl = (GestionAutoresRemote) context.lookup(lookupName);
             System.out.println("gl instaciado");
               
         } catch (Exception ex) {  
@@ -129,9 +107,5 @@ public class AddLibro extends JFrame {
             throw ex;  
         }  
 	}
+
 }
-
-
-
-
-
