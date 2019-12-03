@@ -24,10 +24,11 @@ public class Libro implements Serializable {
 	@Column(name="li_titulo")
 	private String li_titulo;
 	
-	@OneToOne(cascade = CascadeType.ALL)
-	@JoinColumn(name="li_codigo")
-	//@Column(name="li_autor")
+	@ManyToOne(cascade = CascadeType.ALL)
+	//@JoinColumn(name="li_codigo", insertable = false, updatable = false)
 	private Autor autor;
+	//@Column(name="li_autor")
+	
 	
 	@Column(name="li_fecha")
 	private String fecha_publicacion;
