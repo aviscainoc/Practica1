@@ -2,8 +2,13 @@ package modelo;
 
 import java.util.Date;
 
-public class Editorial {
+import javax.persistence.Entity;
+import javax.persistence.Id;
 
+@Entity
+
+public class Editorial {
+	@Id
 	private int ed_codigo;
 	private String ed_pais;
 	private String ed_nombre;
@@ -37,8 +42,8 @@ public class Editorial {
 	public String getEd_fundacion() {
 		return ed_fundacion;
 	}
-	public void setEd_fundacion(String ed_fundacion2) {
-		this.ed_fundacion = ed_fundacion2;
+	public void setEd_fundacion(String ed_fundacion) {
+		this.ed_fundacion = ed_fundacion;
 	}
 	@Override
 	public String toString() {
