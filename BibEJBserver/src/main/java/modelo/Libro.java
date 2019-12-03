@@ -71,7 +71,7 @@ public class Libro implements Serializable {
 	@Override
 	public String toString() {
 		return "Libro [li_codigo=" + li_codigo + ", li_titulo=" + li_titulo + ", autor=" + autor + ", editorial="
-				//+ editorial 
+				+ editorial 
 				+ ", fecha_publicacion=" + fecha_publicacion + "]";
 	}
 	
