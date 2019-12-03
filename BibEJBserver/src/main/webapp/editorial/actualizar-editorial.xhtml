@@ -1,0 +1,51 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd"> 
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:ui="http://java.sun.com/jsf/facelets"
+      xmlns:f="http://java.sun.com/jsf/core"
+      xmlns:h="http://java.sun.com/jsf/html"> 
+
+<h:head></h:head> 
+<body> 
+
+<h1>Registrar nuevo editorial</h1>
+
+
+<h:form>
+
+	<h:outputLabel > Codigo
+	</h:outputLabel>
+	
+	<h:inputText value="#{gestioneEditorialesBean.ed_codigo}" placeholder="Codigo">###
+	</h:inputText>
+	
+	<h:outputLabel > Pais
+	</h:outputLabel>
+	
+	<h:inputText value="#{gestioneEditorialesBean.ed_pais}" placeholder="Pais">###
+	</h:inputText>
+	
+	<h:outputLabel > Nombre
+	</h:outputLabel>
+	
+	<h:inputText value="#{gestioneEditorialesBean.ed_nombre}" placexholder="Nombre">###
+	</h:inputText>
+	
+	<h:outputLabel > Fundador
+	</h:outputLabel>
+	
+	<h:inputText value="#{gestioneEditorialesBean.ed_fundador}" placeholder="Fundador">###
+	</h:inputText>
+	
+	<h:inputText value="#{gestioneEditorialesBean.ed_fundacion}" placeholder="Fundacion">###
+	</h:inputText>
+	
+	<h:commandButton value="Guardar" action="#{gestioneEditorialesBean.update()}"  />
+	<h:commandButton value="Regresar" action="principal-editorial"/>
+	
+
+
+
+</h:form>
+
+</body> 
+</html>
